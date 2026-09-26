@@ -1,0 +1,122 @@
+{
+  "objects": [
+    {
+      "id": "alfama",
+      "type": "place",
+      "title": "Alfama",
+      "destination": "Lisbon",
+      "area": "Lisbon",
+      "summary": "A hillside neighbourhood of narrow streets, viewpoints and layered everyday life.",
+      "why": "Alfama works as a doorway into Lisbon through streets, music, food and memory rather than as a single attraction.",
+      "tags": [
+        "neighbourhood",
+        "walking",
+        "Lisbon"
+      ],
+      "image": ""
+    },
+    {
+      "id": "fado",
+      "type": "story",
+      "title": "Fado and the city",
+      "destination": "Lisbon",
+      "area": "Lisbon",
+      "summary": "A way into Lisbon through voice, place, memory and the rooms where music is performed.",
+      "why": "The point is not only to find a venue, but to understand the cultural thread that connects neighbourhood, music and experience.",
+      "tags": [
+        "music",
+        "identity",
+        "culture"
+      ],
+      "image": ""
+    },
+    {
+      "id": "azulejo",
+      "type": "experience",
+      "title": "Paint an azulejo",
+      "destination": "Lisbon",
+      "area": "Lisbon",
+      "summary": "A hands-on tile-painting experience that turns a visual detail of the city into something you do.",
+      "why": "It moves the user from seeing a material culture to participating in it.",
+      "tags": [
+        "workshop",
+        "craft",
+        "hands-on"
+      ],
+      "image": ""
+    },
+    {
+      "id": "mar-mikhael",
+      "type": "place",
+      "title": "Mar Mikhael",
+      "destination": "Lebanon",
+      "area": "Beirut",
+      "summary": "A Beirut neighbourhood entered through streets, workshops, cafés, nightlife and changing urban layers.",
+      "why": "It is useful as a neighbourhood object because many discoveries can connect back to the same piece of city.",
+      "tags": [
+        "neighbourhood",
+        "Beirut",
+        "urban life"
+      ],
+      "image": ""
+    },
+    {
+      "id": "lebanon-table",
+      "type": "story",
+      "title": "The Lebanese table",
+      "destination": "Lebanon",
+      "area": "Lebanon",
+      "summary": "Food as a network of dishes, ingredients, rituals, regions and the people who make them.",
+      "why": "Instead of reducing food to restaurant search, the Story layer connects what you eat to culture and place.",
+      "tags": [
+        "food",
+        "culture",
+        "people"
+      ],
+      "image": ""
+    },
+    {
+      "id": "beirut-food-walk",
+      "type": "experience",
+      "title": "A Beirut food walk",
+      "destination": "Lebanon",
+      "area": "Beirut",
+      "summary": "A flexible thread through bakeries, cafés, street food and neighbourhood stops.",
+      "why": "The experience can connect several Places while the Story layer explains what each stop means.",
+      "tags": [
+        "food",
+        "walking",
+        "local"
+      ],
+      "image": ""
+    }
+  ],
+  "reels": [
+    {
+      "id": "alfama-morning",
+      "destination": "Lisbon",
+      "caption": "A street can be the discovery. Then the city opens sideways from it.",
+      "direct": [
+        "alfama"
+      ],
+      "related": [
+        "fado",
+        "azulejo"
+      ],
+      "media": ""
+    },
+    {
+      "id": "beirut-street-entry",
+      "destination": "Lebanon",
+      "caption": "Start with Beirut as it is encountered: one street, then the relationships around it.",
+      "direct": [
+        "mar-mikhael"
+      ],
+      "related": [
+        "lebanon-table",
+        "beirut-food-walk"
+      ],
+      "media": ""
+    }
+  ]
+}

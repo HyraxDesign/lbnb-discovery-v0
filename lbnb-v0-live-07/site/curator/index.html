@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LBNB Curator V0</title>
+<style>
+:root{--bg:#f4f3ef;--panel:#fff;--ink:#151515;--muted:#777;--line:#ddd9d1}
+*{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,Arial,sans-serif}
+header{position:sticky;top:0;z-index:10;background:rgba(244,243,239,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 18px;display:flex;gap:12px;align-items:center}
+header h1{font-size:18px;margin:0;flex:1} header small{color:var(--muted)}
+button,.btn{border:1px solid var(--line);background:#fff;border-radius:999px;padding:9px 13px;font-weight:700;cursor:pointer}
+.primary{background:#111;color:#fff;border-color:#111} .danger{color:#9a2525}
+main{display:grid;grid-template-columns:280px 1fr;min-height:calc(100vh - 62px)}
+nav{padding:18px;border-right:1px solid var(--line)} nav button{display:block;width:100%;text-align:left;margin-bottom:8px;border-radius:12px}
+nav button.active{background:#111;color:#fff;border-color:#111}
+.content{padding:22px} .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:15px;cursor:pointer}
+.card small{text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-size:9px}
+.card h3{margin:6px 0 5px;font-size:17px} .card p{margin:0;color:#666;font-size:12px;line-height:1.4}
+.tag{display:inline-block;margin:7px 5px 0 0;background:#f0eee8;border-radius:999px;padding:5px 8px;font-size:10px}
+dialog{border:0;border-radius:18px;padding:0;max-width:640px;width:calc(100% - 28px);box-shadow:0 30px 90px rgba(0,0,0,.28)}
+dialog::backdrop{background:rgba(0,0,0,.4)} form{padding:20px} .formHead{display:flex;align-items:center;gap:10px;margin-bottom:14px} .formHead h2{margin:0;flex:1}
+label{display:block;font-size:11px;font-weight:700;margin:12px 0 5px} input,textarea,select{width:100%;border:1px solid var(--line);border-radius:11px;padding:10px 11px;font:inherit;background:#fff} textarea{min-height:90px;resize:vertical}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:10px} .actions{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+.preview{background:#111;color:#fff;border-radius:18px;min-height:520px;padding:18px;display:flex;flex-direction:column;justify-content:flex-end}
+.preview h2{font-size:30px;margin:8px 0} .rail{display:flex;gap:9px;overflow:auto;padding:12px 0 2px}
+.pill{flex:0 0 170px;background:#fff;color:#111;border-radius:13px;padding:12px} .pill small{font-size:9px;color:#777;text-transform:uppercase}
+.status{color:var(--muted);font-size:12px;margin-left:auto}
+.empty{padding:40px 0;color:#777;text-align:center}
+@media(max-width:760px){main{grid-template-columns:1fr}nav{border-right:0;border-bottom:1px solid var(--line);display:flex;gap:7px;overflow:auto}nav button{min-width:120px;margin:0}.content{padding:14px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <div><h1>LBNB Curator V0</h1><small>Content + relationships, no backend</small></div>
+  <span class="status" id="status">Local draft</span>
+  <button id="importBtn">Import JSON</button>
+  <button id="exportBtn" class="primary">Export JSON</button>
+  <input type="file" id="fileInput" accept=".json" hidden>
+</header>
+<main>
+<nav>
+  <button class="active" data-tab="objects">Places / Experiences / Stories</button>
+  <button data-tab="reels">Reels</button>
+  <button data-tab="preview">Preview graph</button>
+</nav>
+<section class="content">
+  <div class="toolbar">
+    <button id="addObject" class="primary">＋ New object</button>
+    <button id="addReel" hidden class="primary">＋ New reel</button>
+    <button id="resetBtn">Reset local draft</button>
+  </div>
+  <div id="view"></div>
+</section>
+</main>
+
+<dialog id="objectDialog">
+<form method="dialog" id="objectForm">
+<div class="formHead"><h2 id="objectFormTitle">Object</h2><button value="cancel">×</button></div>
+<input type="hidden" name="originalId">
+<div class="row"><div><label>Type</label><select name="type"><option>place</option><option>experience</option><option>story</option></select></div><div><label>ID</label><input name="id" required></div></div>
+<div class="row"><div><label>Title</label><input name="title" required></div><div><label>Destination</label><input name="destination" placeholder="Lisbon / Lebanon"></div></div>
+<label>Area</label><input name="area">
+<label>Summary</label><textarea name="summary"></textarea>
+<label>Why it matters / The experience</label><textarea name="why"></textarea>
+<label>Tags</label><input name="tags" placeholder="architecture, food, walking">
+<label>Image URL (optional for now)</label><input name="image">
+<div class="actions"><button type="button" class="danger" id="deleteObject">Delete</button><button value="cancel">Cancel</button><button type="submit" class="primary">Save</button></div>
+</form>
+</dialog>
+
+<dialog id="reelDialog">
+<form method="dialog" id="reelForm">
+<div class="formHead"><h2 id="reelFormTitle">Reel</h2><button value="cancel">×</button></div>
+<input type="hidden" name="originalId">
+<div class="row"><div><label>ID</label><input name="id" required></div><div><label>Destination</label><input name="destination"></div></div>
+<label>Caption</label><textarea name="caption"></textarea>
+<label>IN THIS REEL — object IDs</label><input name="direct" placeholder="alfama, calcada">
+<label>EXPLORE FROM HERE — object IDs</label><input name="related" placeholder="fado, azulejo">
+<label>Media URL/path (optional for now)</label><input name="media">
+<div class="actions"><button type="button" class="danger" id="deleteReel">Delete</button><button value="cancel">Cancel</button><button type="submit" class="primary">Save</button></div>
+</form>
+</dialog>
+
+<script>
+const SEED={"objects": [{"id": "alfama", "type": "place", "title": "Alfama", "destination": "Lisbon", "area": "Lisbon", "summary": "A hillside neighbourhood of narrow streets, viewpoints and layered everyday life.", "why": "Alfama works as a doorway into Lisbon through streets, music, food and memory rather than as a single attraction.", "tags": ["neighbourhood", "walking", "Lisbon"], "image": ""}, {"id": "fado", "type": "story", "title": "Fado and the city", "destination": "Lisbon", "area": "Lisbon", "summary": "A way into Lisbon through voice, place, memory and the rooms where music is performed.", "why": "The point is not only to find a venue, but to understand the cultural thread that connects neighbourhood, music and experience.", "tags": ["music", "identity", "culture"], "image": ""}, {"id": "azulejo", "type": "experience", "title": "Paint an azulejo", "destination": "Lisbon", "area": "Lisbon", "summary": "A hands-on tile-painting experience that turns a visual detail of the city into something you do.", "why": "It moves the user from seeing a material culture to participating in it.", "tags": ["workshop", "craft", "hands-on"], "image": ""}, {"id": "mar-mikhael", "type": "place", "title": "Mar Mikhael", "destination": "Lebanon", "area": "Beirut", "summary": "A Beirut neighbourhood entered through streets, workshops, cafés, nightlife and changing urban layers.", "why": "It is useful as a neighbourhood object because many discoveries can connect back to the same piece of city.", "tags": ["neighbourhood", "Beirut", "urban life"], "image": ""}, {"id": "lebanon-table", "type": "story", "title": "The Lebanese table", "destination": "Lebanon", "area": "Lebanon", "summary": "Food as a network of dishes, ingredients, rituals, regions and the people who make them.", "why": "Instead of reducing food to restaurant search, the Story layer connects what you eat to culture and place.", "tags": ["food", "culture", "people"], "image": ""}, {"id": "beirut-food-walk", "type": "experience", "title": "A Beirut food walk", "destination": "Lebanon", "area": "Beirut", "summary": "A flexible thread through bakeries, cafés, street food and neighbourhood stops.", "why": "The experience can connect several Places while the Story layer explains what each stop means.", "tags": ["food", "walking", "local"], "image": ""}], "reels": [{"id": "alfama-morning", "destination": "Lisbon", "caption": "A street can be the discovery. Then the city opens sideways from it.", "direct": ["alfama"], "related": ["fado", "azulejo"], "media": ""}, {"id": "beirut-street-entry", "destination": "Lebanon", "caption": "Start with Beirut as it is encountered: one street, then the relationships around it.", "direct": ["mar-mikhael"], "related": ["lebanon-table", "beirut-food-walk"], "media": ""}]};
+const KEY='lbnb_curator_v0';
+let data=load();
+let tab='objects';
+const view=document.getElementById('view');
+const statusEl=document.getElementById('status');
+
+function load(){try{return JSON.parse(localStorage.getItem(KEY))||structuredClone(SEED)}catch(e){return structuredClone(SEED)}}
+function save(){localStorage.setItem(KEY,JSON.stringify(data));statusEl.textContent='Saved locally · '+new Date().toLocaleTimeString([],{hour:'2-digit',minute:'2-digit'})}
+function esc(s=''){return String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function ids(s=''){return s.split(',').map(x=>x.trim()).filter(Boolean)}
+function obj(id){return data.objects.find(o=>o.id===id)}
+function render(){
+ document.querySelectorAll('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===tab));
+ document.getElementById('addObject').hidden=tab!=='objects';
+ document.getElementById('addReel').hidden=tab!=='reels';
+ if(tab==='objects') renderObjects();
+ if(tab==='reels') renderReels();
+ if(tab==='preview') renderPreview();
+}
+function renderObjects(){
+ view.innerHTML=data.objects.length?`<div class="grid">${data.objects.map(o=>`<article class="card" data-object="${esc(o.id)}"><small>${esc(o.type)} · ${esc(o.destination||'')}</small><h3>${esc(o.title)}</h3><p>${esc(o.summary||'')}</p>${(o.tags||[]).map(t=>`<span class="tag">${esc(t)}</span>`).join('')}</article>`).join('')}</div>`:'<div class="empty">No objects yet.</div>';
+ view.querySelectorAll('[data-object]').forEach(el=>el.onclick=()=>editObject(el.dataset.object));
+}
+function renderReels(){
+ view.innerHTML=data.reels.length?`<div class="grid">${data.reels.map(r=>`<article class="card" data-reel="${esc(r.id)}"><small>REEL · ${esc(r.destination||'')}</small><h3>${esc(r.id)}</h3><p>${esc(r.caption||'')}</p><span class="tag">${r.direct.length} direct</span><span class="tag">${r.related.length} related</span></article>`).join('')}</div>`:'<div class="empty">No reels yet.</div>';
+ view.querySelectorAll('[data-reel]').forEach(el=>el.onclick=()=>editReel(el.dataset.reel));
+}
+function renderPreview(){
+ const r=data.reels[0];
+ if(!r){view.innerHTML='<div class="empty">Create a reel to preview the graph.</div>';return}
+ const cards=[...r.direct,...r.related].map(id=>obj(id)).filter(Boolean);
+ view.innerHTML=`<div class="preview"><small>${esc(r.destination)} · DISCOVERY</small><h2>${esc(r.caption)}</h2><div class="rail">${cards.map((o,i)=>`<div class="pill"><small>${i<r.direct.length?'IN THIS REEL':'EXPLORE FROM HERE'} · ${esc(o.type)}</small><b>${esc(o.title)}</b></div>`).join('')}</div></div>`;
+}
+function editObject(id=null){
+ const o=id?obj(id):{id:'',type:'place',title:'',destination:'',area:'',summary:'',why:'',tags:[],image:''};
+ const f=document.getElementById('objectForm'); f.reset();
+ f.originalId.value=o.id||''; f.type.value=o.type||'place'; f.id.value=o.id||''; f.title.value=o.title||''; f.destination.value=o.destination||''; f.area.value=o.area||''; f.summary.value=o.summary||''; f.why.value=o.why||''; f.tags.value=(o.tags||[]).join(', '); f.image.value=o.image||'';
+ document.getElementById('objectFormTitle').textContent=id?'Edit object':'New object';
+ document.getElementById('deleteObject').hidden=!id; document.getElementById('objectDialog').showModal();
+}
+document.getElementById('objectForm').onsubmit=e=>{
+ e.preventDefault(); const f=e.target; const o={id:f.id.value.trim(),type:f.type.value,title:f.title.value.trim(),destination:f.destination.value.trim(),area:f.area.value.trim(),summary:f.summary.value.trim(),why:f.why.value.trim(),tags:ids(f.tags.value),image:f.image.value.trim()};
+ const orig=f.originalId.value; const idx=data.objects.findIndex(x=>x.id===orig);
+ if(idx>=0)data.objects[idx]=o; else data.objects.push(o);
+ if(orig && orig!==o.id) data.reels.forEach(r=>{r.direct=r.direct.map(x=>x===orig?o.id:x);r.related=r.related.map(x=>x===orig?o.id:x)});
+ save(); document.getElementById('objectDialog').close(); render();
+}
+document.getElementById('deleteObject').onclick=()=>{
+ const id=document.getElementById('objectForm').originalId.value; if(!id)return;
+ data.objects=data.objects.filter(o=>o.id!==id); data.reels.forEach(r=>{r.direct=r.direct.filter(x=>x!==id);r.related=r.related.filter(x=>x!==id)});
+ save(); document.getElementById('objectDialog').close(); render();
+}
+function editReel(id=null){
+ const r=id?data.reels.find(x=>x.id===id):{id:'',destination:'',caption:'',direct:[],related:[],media:''};
+ const f=document.getElementById('reelForm'); f.reset();
+ f.originalId.value=r.id||''; f.id.value=r.id||''; f.destination.value=r.destination||''; f.caption.value=r.caption||''; f.direct.value=(r.direct||[]).join(', '); f.related.value=(r.related||[]).join(', '); f.media.value=r.media||'';
+ document.getElementById('reelFormTitle').textContent=id?'Edit reel':'New reel';
+ document.getElementById('deleteReel').hidden=!id; document.getElementById('reelDialog').showModal();
+}
+document.getElementById('reelForm').onsubmit=e=>{
+ e.preventDefault(); const f=e.target; const r={id:f.id.value.trim(),destination:f.destination.value.trim(),caption:f.caption.value.trim(),direct:ids(f.direct.value),related:ids(f.related.value),media:f.media.value.trim()};
+ const orig=f.originalId.value; const idx=data.reels.findIndex(x=>x.id===orig); if(idx>=0)data.reels[idx]=r; else data.reels.push(r);
+ save(); document.getElementById('reelDialog').close(); render();
+}
+document.getElementById('deleteReel').onclick=()=>{
+ const id=document.getElementById('reelForm').originalId.value; if(!id)return; data.reels=data.reels.filter(r=>r.id!==id); save(); document.getElementById('reelDialog').close(); render();
+}
+document.getElementById('addObject').onclick=()=>editObject();
+document.getElementById('addReel').onclick=()=>editReel();
+document.querySelectorAll('nav button').forEach(b=>b.onclick=()=>{tab=b.dataset.tab;render()});
+document.getElementById('resetBtn').onclick=()=>{if(confirm('Reset this local draft to the seed content?')){data=structuredClone(SEED);save();render()}};
+document.getElementById('exportBtn').onclick=()=>{
+ const blob=new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='lbnb-content-v0.json';a.click();URL.revokeObjectURL(a.href);
+}
+document.getElementById('importBtn').onclick=()=>document.getElementById('fileInput').click();
+document.getElementById('fileInput').onchange=async e=>{
+ const file=e.target.files[0]; if(!file)return;
+ try{const parsed=JSON.parse(await file.text()); if(!parsed.objects||!parsed.reels)throw new Error('Invalid structure'); data=parsed;save();render();}
+ catch(err){alert('Could not import this JSON file.')} e.target.value='';
+}
+render();
+</script>
+</body>
+</html>
