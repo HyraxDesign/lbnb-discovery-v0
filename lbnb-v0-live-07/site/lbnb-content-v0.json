@@ -1,122 +1,242 @@
 {
   "objects": [
     {
-      "id": "alfama",
+      "id": "maat",
       "type": "place",
-      "title": "Alfama",
+      "title": "MAAT",
       "destination": "Lisbon",
-      "area": "Lisbon",
-      "summary": "A hillside neighbourhood of narrow streets, viewpoints and layered everyday life.",
-      "why": "Alfama works as a doorway into Lisbon through streets, music, food and memory rather than as a single attraction.",
+      "area": "Belém",
+      "summary": "A museum on the Tagus bringing art, architecture and technology together in a riverside setting.",
+      "why": "The building, exhibitions, riverfront and Belém can be explored as one connected experience rather than as separate listings.",
       "tags": [
-        "neighbourhood",
-        "walking",
-        "Lisbon"
+        "architecture",
+        "museum",
+        "riverfront",
+        "Belém"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisbon.jpg",
+      "source": "https://www.maat.pt/en/plan-a-visit"
     },
     {
-      "id": "fado",
+      "id": "belem",
+      "type": "place",
+      "title": "Belém",
+      "destination": "Lisbon",
+      "area": "Lisbon",
+      "summary": "A riverfront district where monuments, museums, gardens and food can be experienced within one walkable area.",
+      "why": "Belém works as a cluster of connected places rather than a checklist of isolated attractions.",
+      "tags": [
+        "riverfront",
+        "culture",
+        "walking"
+      ],
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisboa.jpg",
+      "source": "https://www.visitlisboa.com/"
+    },
+    {
+      "id": "calcada-portuguesa",
+      "type": "story",
+      "title": "Calçada portuguesa",
+      "destination": "Lisbon",
+      "area": "Baixa / Rossio",
+      "summary": "Lisbon’s black-and-white stone paving turns the ground itself into a piece of public design.",
+      "why": "The paving is a strong example of the Story layer: something people walk over every day becomes a way to understand craft, pattern and identity.",
+      "tags": [
+        "craft",
+        "public realm",
+        "design",
+        "identity"
+      ],
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg",
+      "source": "https://www.visitlisboa.com/pt-pt/lisbon-stories/14-rota-da-calcada-portuguesa/pois"
+    },
+    {
+      "id": "fado-story",
       "type": "story",
       "title": "Fado and the city",
       "destination": "Lisbon",
-      "area": "Lisbon",
-      "summary": "A way into Lisbon through voice, place, memory and the rooms where music is performed.",
-      "why": "The point is not only to find a venue, but to understand the cultural thread that connects neighbourhood, music and experience.",
+      "area": "Alfama / Mouraria",
+      "summary": "Fado connects voice, neighbourhood, memory and the rooms where the music is performed.",
+      "why": "Rather than treating fado as a venue category, LBNB can connect the music to the neighbourhoods and experiences that give it context.",
       "tags": [
         "music",
+        "culture",
         "identity",
-        "culture"
+        "Alfama"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg",
+      "source": "https://www.visitlisboa.com/en/lisbon-stories/1-rota-do-fado"
     },
     {
-      "id": "azulejo",
+      "id": "lisbon-architecture-thread",
       "type": "experience",
-      "title": "Paint an azulejo",
+      "title": "Lisbon through architecture",
       "destination": "Lisbon",
       "area": "Lisbon",
-      "summary": "A hands-on tile-painting experience that turns a visual detail of the city into something you do.",
-      "why": "It moves the user from seeing a material culture to participating in it.",
+      "summary": "A self-guided architectural thread connecting riverfront buildings, streets and the stories behind them.",
+      "why": "It demonstrates how one Journey can connect several Places and Stories without requiring a commercial booking.",
       "tags": [
-        "workshop",
-        "craft",
-        "hands-on"
+        "architecture",
+        "walking",
+        "self-guided"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisboa.jpg",
+      "source": "https://www.maat.pt/en"
     },
     {
-      "id": "mar-mikhael",
+      "id": "beirut",
       "type": "place",
-      "title": "Mar Mikhael",
+      "title": "Beirut",
       "destination": "Lebanon",
       "area": "Beirut",
-      "summary": "A Beirut neighbourhood entered through streets, workshops, cafés, nightlife and changing urban layers.",
-      "why": "It is useful as a neighbourhood object because many discoveries can connect back to the same piece of city.",
+      "summary": "A city best entered through neighbourhoods, streets, food, architecture and the relationships between them.",
+      "why": "Beirut is exactly the kind of destination where the product should reveal multiple overlapping identities rather than flatten the city into a list of attractions.",
       "tags": [
-        "neighbourhood",
-        "Beirut",
-        "urban life"
+        "city",
+        "culture",
+        "architecture",
+        "food"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Beirut_Skyline.jpg"
     },
     {
-      "id": "lebanon-table",
+      "id": "byblos",
+      "type": "place",
+      "title": "Jbeil / Byblos",
+      "destination": "Lebanon",
+      "area": "Jbeil",
+      "summary": "A historic Mediterranean town where archaeology, old streets, the harbour and contemporary life overlap.",
+      "why": "Byblos can connect history to present-day experience in one compact destination graph.",
+      "tags": [
+        "history",
+        "coast",
+        "archaeology",
+        "Jbeil"
+      ],
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Byblos_Castle_2009.jpg"
+    },
+    {
+      "id": "baalbek",
+      "type": "place",
+      "title": "Baalbek",
+      "destination": "Lebanon",
+      "area": "Baalbek-Hermel",
+      "summary": "A major archaeological site in the Beqaa, centred on monumental Roman temple remains.",
+      "why": "Baalbek gives the Place layer enough depth to connect archaeology, landscape and historical Story without reducing the visit to a single photo stop.",
+      "tags": [
+        "archaeology",
+        "history",
+        "Beqaa",
+        "heritage"
+      ],
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Baalbek%20-%20temple%20of%20Jupiter.jpg",
+      "source": "https://commons.wikimedia.org/wiki/Baalbek"
+    },
+    {
+      "id": "lebanese-table",
       "type": "story",
       "title": "The Lebanese table",
       "destination": "Lebanon",
       "area": "Lebanon",
-      "summary": "Food as a network of dishes, ingredients, rituals, regions and the people who make them.",
-      "why": "Instead of reducing food to restaurant search, the Story layer connects what you eat to culture and place.",
+      "summary": "Food understood as a network of dishes, ingredients, rituals, regions and people rather than simply restaurant search.",
+      "why": "This Story can connect food Places and Experiences across Beirut, Jbeil and the mountains.",
       "tags": [
         "food",
         "culture",
-        "people"
+        "people",
+        "identity"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg",
+      "source": "https://commons.wikimedia.org/wiki/File:Beirut_Skyline.jpg"
     },
     {
-      "id": "beirut-food-walk",
+      "id": "lebanon-history-thread",
       "type": "experience",
-      "title": "A Beirut food walk",
+      "title": "From coast to the Beqaa",
       "destination": "Lebanon",
-      "area": "Beirut",
-      "summary": "A flexible thread through bakeries, cafés, street food and neighbourhood stops.",
-      "why": "The experience can connect several Places while the Story layer explains what each stop means.",
+      "area": "Lebanon",
+      "summary": "A conceptual Journey thread linking Jbeil / Byblos with Baalbek and the stories that sit between coast and inland Lebanon.",
+      "why": "It tests how the product can assemble a larger experience from several Places without pretending that the experience has to be a commercial tour.",
       "tags": [
-        "food",
-        "walking",
-        "local"
+        "road trip",
+        "history",
+        "coast",
+        "Beqaa"
       ],
-      "image": ""
+      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg",
+      "source": "https://commons.wikimedia.org/wiki/Byblos"
     }
   ],
   "reels": [
     {
-      "id": "alfama-morning",
+      "id": "lisbon-maat-riverfront",
       "destination": "Lisbon",
-      "caption": "A street can be the discovery. Then the city opens sideways from it.",
+      "caption": "Start with the building, then let the riverfront open the rest of Belém.",
       "direct": [
-        "alfama"
+        "maat",
+        "belem"
       ],
       "related": [
-        "fado",
-        "azulejo"
+        "lisbon-architecture-thread",
+        "calcada-portuguesa"
       ],
-      "media": ""
+      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisbon.jpg"
     },
     {
-      "id": "beirut-street-entry",
-      "destination": "Lebanon",
-      "caption": "Start with Beirut as it is encountered: one street, then the relationships around it.",
+      "id": "lisbon-ground-story",
+      "destination": "Lisbon",
+      "caption": "Sometimes the city is already telling its story under your feet.",
       "direct": [
-        "mar-mikhael"
+        "calcada-portuguesa"
       ],
       "related": [
-        "lebanon-table",
-        "beirut-food-walk"
+        "fado-story",
+        "lisbon-architecture-thread"
       ],
-      "media": ""
+      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg"
+    },
+    {
+      "id": "beirut-entry",
+      "destination": "Lebanon",
+      "caption": "Beirut is not one story. Start with the city, then follow the layers around it.",
+      "direct": [
+        "beirut"
+      ],
+      "related": [
+        "lebanese-table",
+        "byblos",
+        "lebanon-history-thread"
+      ],
+      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg"
+    },
+    {
+      "id": "byblos-entry",
+      "destination": "Lebanon",
+      "caption": "A historic town can be a Place, a Story and the beginning of a larger Journey.",
+      "direct": [
+        "byblos"
+      ],
+      "related": [
+        "lebanon-history-thread",
+        "lebanese-table",
+        "baalbek"
+      ],
+      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg"
+    },
+    {
+      "id": "baalbek-entry",
+      "destination": "Lebanon",
+      "caption": "Open the monument, then keep following what connects beyond it.",
+      "direct": [
+        "baalbek"
+      ],
+      "related": [
+        "lebanon-history-thread",
+        "byblos"
+      ],
+      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Baalbek%20-%20temple%20of%20Jupiter.jpg"
     }
   ]
 }
