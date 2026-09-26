@@ -14,7 +14,7 @@
         "riverfront",
         "Belém"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisbon.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
       "source": "https://www.maat.pt/en/plan-a-visit"
     },
     {
@@ -30,7 +30,7 @@
         "culture",
         "walking"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisboa.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/MAAT_Lisboa.jpg",
       "source": "https://www.visitlisboa.com/"
     },
     {
@@ -47,7 +47,7 @@
         "design",
         "identity"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
       "source": "https://www.visitlisboa.com/pt-pt/lisbon-stories/14-rota-da-calcada-portuguesa/pois"
     },
     {
@@ -64,7 +64,7 @@
         "identity",
         "Alfama"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
       "source": "https://www.visitlisboa.com/en/lisbon-stories/1-rota-do-fado"
     },
     {
@@ -80,7 +80,7 @@
         "walking",
         "self-guided"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisboa.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/9/92/MAAT_Lisboa.jpg",
       "source": "https://www.maat.pt/en"
     },
     {
@@ -97,7 +97,7 @@
         "architecture",
         "food"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg",
       "source": "https://commons.wikimedia.org/wiki/File:Beirut_Skyline.jpg"
     },
     {
@@ -114,7 +114,7 @@
         "archaeology",
         "Jbeil"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Byblos_Castle_2009.jpg",
       "source": "https://commons.wikimedia.org/wiki/File:Byblos_Castle_2009.jpg"
     },
     {
@@ -131,7 +131,7 @@
         "Beqaa",
         "heritage"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Baalbek%20-%20temple%20of%20Jupiter.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg",
       "source": "https://commons.wikimedia.org/wiki/Baalbek"
     },
     {
@@ -148,7 +148,7 @@
         "people",
         "identity"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg",
       "source": "https://commons.wikimedia.org/wiki/File:Beirut_Skyline.jpg"
     },
     {
@@ -165,7 +165,7 @@
         "coast",
         "Beqaa"
       ],
-      "image": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Byblos_Castle_2009.jpg",
       "source": "https://commons.wikimedia.org/wiki/Byblos"
     }
   ],
@@ -182,7 +182,7 @@
         "lisbon-architecture-thread",
         "calcada-portuguesa"
       ],
-      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/MAAT%20Lisbon.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
     },
     {
       "id": "lisbon-ground-story",
@@ -195,7 +195,7 @@
         "fado-story",
         "lisbon-architecture-thread"
       ],
-      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Pra%C3%A7a%20Dom%20Pedro%20IV%20Lisboa.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
     },
     {
       "id": "beirut-entry",
@@ -209,7 +209,7 @@
         "byblos",
         "lebanon-history-thread"
       ],
-      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Beirut%20Skyline.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg"
     },
     {
       "id": "byblos-entry",
@@ -223,7 +223,7 @@
         "lebanese-table",
         "baalbek"
       ],
-      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Byblos%20Castle%202009.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/5/5b/Byblos_Castle_2009.jpg"
     },
     {
       "id": "baalbek-entry",
@@ -236,7 +236,7 @@
         "lebanon-history-thread",
         "byblos"
       ],
-      "media": "https://commons.wikimedia.org/wiki/Special:Redirect/file/Baalbek%20-%20temple%20of%20Jupiter.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
     }
   ]
 }
