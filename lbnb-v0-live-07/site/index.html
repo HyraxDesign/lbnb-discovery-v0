@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NAVA · V1.1 Pilot</title>
+<title>NAVA · V1.1.1 Pilot</title>
 <meta name="theme-color" content="#111111">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -90,6 +90,7 @@ const $=id=>document.getElementById(id);
 const esc=(s='')=>String(s).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
 const valid=d=>d&&Array.isArray(d.objects)&&Array.isArray(d.reels);
 const destination=o=>o?.destination||o?.area||'Saved';
+const displayType=o=>o?.subtype==='stay'?'STAY':String(o?.type||'place').toUpperCase();
 function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');clearTimeout(showToast.t);showToast.t=setTimeout(()=>$('toast').classList.remove('show'),1350)}
 function readSaved(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||'[]')}catch(e){return[]}}
 function writeSaved(v){localStorage.setItem(SAVED_KEY,JSON.stringify(v));$('savedCount').textContent=v.length;updateSavedCardStates()}
@@ -98,7 +99,7 @@ function toggleSaved(id){let s=readSaved(), on=s.includes(id);s=on?s.filter(x=>x
 function updateSavedCardStates(){document.querySelectorAll('[data-object]').forEach(el=>el.classList.toggle('saved',isSaved(el.dataset.object)))}
 function obj(id){return objects[id]}
 
-async function loadContent(){let loaded=null;try{const r=await fetch('./lbnb-content-v0.json?v=111',{cache:'reload'});if(r.ok)loaded=await r.json()}catch(e){}if(!valid(loaded)){try{loaded=JSON.parse(localStorage.getItem(CONTENT_KEY)||'null')}catch(e){}}if(!valid(loaded)){document.querySelector('#loader div').innerHTML='<b>Could not load content.</b><small>Open the hosted build or check the JSON file.</small>';return}data=loaded;objects=Object.fromEntries(data.objects.map(o=>[o.id,o]));localStorage.setItem(CONTENT_KEY,JSON.stringify(data));writeSaved(readSaved());renderFeed();$('loader').hidden=true;openDeepLink()}
+async function loadContent(){let loaded=null;try{const r=await fetch('./lbnb-content-v0.json?v=112',{cache:'reload'});if(r.ok)loaded=await r.json()}catch(e){}if(!valid(loaded)){try{loaded=JSON.parse(localStorage.getItem(CONTENT_KEY)||'null')}catch(e){}}if(!valid(loaded)){document.querySelector('#loader div').innerHTML='<b>Could not load content.</b><small>Open the hosted build or check the JSON file.</small>';return}data=loaded;objects=Object.fromEntries(data.objects.map(o=>[o.id,o]));localStorage.setItem(CONTENT_KEY,JSON.stringify(data));writeSaved(readSaved());renderFeed();$('loader').hidden=true;openDeepLink()}
 
 function reelItems(r){return (r.objects||[]).map(x=>({...x,o:obj(x.object_id)})).filter(x=>x.o)}
 function cardHTML(o,role='related'){return `<button class="card ${isSaved(o.id)?'saved':''}" data-object="${esc(o.id)}"><div class="cardVisual">${o.image?`<img src="${esc(o.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</div><div class="cardCopy"><small>${esc(displayType(o))}${role==='direct'?' · in reel':''}</small><strong>${esc(o.title)}</strong><span>${esc(o.area||o.destination||'')}</span></div></button>`}
