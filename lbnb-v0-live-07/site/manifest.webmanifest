@@ -1,18 +1,13 @@
 {
-  "name": "LBNB Discovery V0",
-  "short_name": "LBNB V0",
+  "name": "NAVA V1 Prototype",
+  "short_name": "NAVA",
+  "description": "Connected place discovery prototype",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#111111",
   "theme_color": "#111111",
-  "description": "LBNB visual place-discovery prototype.",
   "icons": [
-    {
-      "src": "./icons/icon-180.png",
-      "sizes": "180x180",
-      "type": "image/png"
-    },
     {
       "src": "./icons/icon-192.png",
       "sizes": "192x192",

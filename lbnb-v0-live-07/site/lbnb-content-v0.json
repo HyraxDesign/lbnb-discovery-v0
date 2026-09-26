@@ -1,4 +1,5 @@
 {
+  "version": "1.0-prototype",
   "objects": [
     {
       "id": "maat",
@@ -13,7 +14,39 @@
         "museum",
         "riverfront"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "belem",
+          "relationship": "near"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "tagus-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "oriente",
+          "relationship": "contrast"
+        }
+      ],
+      "practical": {
+        "kind": "museum + public realm",
+        "duration": "1–2 hours",
+        "map_query": "MAAT Lisbon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "belem",
@@ -28,7 +61,31 @@
         "culture",
         "walking"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "maat",
+          "relationship": "near"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "tagus-story",
+          "relationship": "context"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "lisbon-architecture",
@@ -43,7 +100,55 @@
         "walking",
         "self-guided"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "maat",
+          "relationship": "context"
+        },
+        {
+          "object_id": "belem",
+          "relationship": "context"
+        },
+        {
+          "object_id": "tagus-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "calcada-portuguesa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "public-space-pattern",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "oriente",
+          "relationship": "context"
+        },
+        {
+          "object_id": "modern-lisbon",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "contemporary-thread",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "tagus-story",
@@ -58,7 +163,31 @@
         "public realm",
         "city"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "maat",
+          "relationship": "context"
+        },
+        {
+          "object_id": "belem",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "alfama",
@@ -73,7 +202,43 @@
         "walking",
         "street life"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "fado-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-viewpoint",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "context"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "relationship": "near"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {
+        "kind": "neighbourhood",
+        "duration": "1–3 hours",
+        "map_query": "Alfama Lisbon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "fado-story",
@@ -88,7 +253,31 @@
         "identity",
         "culture"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "alfama",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-viewpoint",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "alfama-viewpoint",
@@ -103,7 +292,31 @@
         "walking",
         "city"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "alfama",
+          "relationship": "context"
+        },
+        {
+          "object_id": "fado-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "alfama-food",
@@ -118,7 +331,43 @@
         "neighbourhood",
         "local"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "alfama",
+          "relationship": "context"
+        },
+        {
+          "object_id": "fado-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "alfama-viewpoint",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "pastry-workshop",
+          "relationship": "context"
+        },
+        {
+          "object_id": "pastry-place",
+          "relationship": "context"
+        },
+        {
+          "object_id": "pastry-story",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "calcada-portuguesa",
@@ -133,7 +382,35 @@
         "public realm",
         "design"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "rossio-baixa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "public-space-pattern",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama",
+          "relationship": "cultural"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "rossio-baixa",
@@ -148,7 +425,39 @@
         "urbanism",
         "walking"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "calcada-portuguesa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "public-space-pattern",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "alfama",
+          "relationship": "near"
+        }
+      ],
+      "practical": {
+        "kind": "urban district",
+        "duration": "45–90 min",
+        "map_query": "Rossio Lisbon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "public-space-pattern",
@@ -163,7 +472,31 @@
         "pattern",
         "public realm"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "calcada-portuguesa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "pastry-workshop",
@@ -178,7 +511,34 @@
         "workshop",
         "hands-on"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "pastry-place",
+          "relationship": "near"
+        },
+        {
+          "object_id": "pastry-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "context"
+        }
+      ],
+      "practical": {
+        "kind": "hands-on experience",
+        "duration": "around 2 hours"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "pastry-place",
@@ -193,7 +553,31 @@
         "workshop",
         "kitchen"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "pastry-workshop",
+          "relationship": "near"
+        },
+        {
+          "object_id": "pastry-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "context"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "pastry-story",
@@ -208,7 +592,31 @@
         "tradition",
         "culture"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "pastry-workshop",
+          "relationship": "context"
+        },
+        {
+          "object_id": "pastry-place",
+          "relationship": "context"
+        },
+        {
+          "object_id": "alfama-food",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "oriente",
@@ -223,7 +631,39 @@
         "architecture",
         "transport"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "modern-lisbon",
+          "relationship": "context"
+        },
+        {
+          "object_id": "contemporary-thread",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "maat",
+          "relationship": "contrast"
+        }
+      ],
+      "practical": {
+        "kind": "architecture + district",
+        "duration": "1–2 hours",
+        "map_query": "Gare do Oriente Lisbon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "modern-lisbon",
@@ -238,7 +678,31 @@
         "urbanism",
         "contemporary"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "oriente",
+          "relationship": "context"
+        },
+        {
+          "object_id": "contemporary-thread",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "contemporary-thread",
@@ -253,7 +717,31 @@
         "self-guided",
         "design"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "oriente",
+          "relationship": "context"
+        },
+        {
+          "object_id": "modern-lisbon",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "beirut",
@@ -268,7 +756,43 @@
         "culture",
         "architecture"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lebanese-table",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-neighbourhood",
+          "relationship": "context"
+        },
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "contains"
+        },
+        {
+          "object_id": "byblos",
+          "relationship": "journey"
+        }
+      ],
+      "practical": {
+        "kind": "city",
+        "duration": "open-ended",
+        "map_query": "Beirut Lebanon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "beirut-architecture",
@@ -283,7 +807,47 @@
         "identity",
         "city"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "beirut",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lebanese-table",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "beirut-neighbourhood",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "context"
+        },
+        {
+          "object_id": "mar-mikhael-venue",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-food-walk",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "adjacent-beirut",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "lebanese-table",
@@ -298,7 +862,51 @@
         "culture",
         "identity"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "beirut",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "beirut-neighbourhood",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lebanese-food-walk",
+          "relationship": "context"
+        },
+        {
+          "object_id": "bakery-kitchen",
+          "relationship": "context"
+        },
+        {
+          "object_id": "regional-food-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos",
+          "relationship": "context"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "beirut-neighbourhood",
@@ -313,7 +921,31 @@
         "street life",
         "city"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "beirut",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "lebanese-table",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "mar-mikhael",
@@ -328,7 +960,43 @@
         "Beirut",
         "urban life"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "mar-mikhael-venue",
+          "relationship": "near"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-food-walk",
+          "relationship": "context"
+        },
+        {
+          "object_id": "adjacent-beirut",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut",
+          "relationship": "inside"
+        }
+      ],
+      "practical": {
+        "kind": "neighbourhood",
+        "duration": "1–3 hours",
+        "map_query": "Mar Mikhael Beirut"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "mar-mikhael-venue",
@@ -343,7 +1011,35 @@
         "neighbourhood",
         "Beirut"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "near"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-food-walk",
+          "relationship": "context"
+        },
+        {
+          "object_id": "adjacent-beirut",
+          "relationship": "context"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "beirut-food-walk",
@@ -358,7 +1054,35 @@
         "walking",
         "local"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "context"
+        },
+        {
+          "object_id": "mar-mikhael-venue",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "adjacent-beirut",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "adjacent-beirut",
@@ -373,7 +1097,35 @@
         "walking",
         "Beirut"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "mar-mikhael",
+          "relationship": "context"
+        },
+        {
+          "object_id": "mar-mikhael-venue",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "beirut-food-walk",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "byblos",
@@ -388,7 +1140,47 @@
         "coast",
         "Jbeil"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "byblos-old-town",
+          "relationship": "near"
+        },
+        {
+          "object_id": "byblos-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coastal-food",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beirut",
+          "relationship": "journey"
+        },
+        {
+          "object_id": "baalbek",
+          "relationship": "journey"
+        }
+      ],
+      "practical": {
+        "kind": "historic town",
+        "duration": "2–4 hours",
+        "map_query": "Byblos Lebanon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "byblos-old-town",
@@ -403,7 +1195,35 @@
         "old town",
         "coast"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "byblos",
+          "relationship": "near"
+        },
+        {
+          "object_id": "byblos-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coastal-food",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "context"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "byblos-story",
@@ -418,7 +1238,35 @@
         "archaeology",
         "identity"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "byblos",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos-old-town",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coastal-food",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "coastal-food",
@@ -433,7 +1281,35 @@
         "coast",
         "local"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "byblos",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos-old-town",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "coast-to-beqaa",
@@ -448,7 +1324,47 @@
         "history",
         "road trip"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "byblos",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos-old-town",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "coastal-food",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "baalbek",
+          "relationship": "context"
+        },
+        {
+          "object_id": "baalbek-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "beqaa",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "baalbek",
@@ -463,7 +1379,39 @@
         "heritage",
         "Beqaa"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "baalbek-story",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beqaa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "context"
+        },
+        {
+          "object_id": "byblos",
+          "relationship": "journey"
+        }
+      ],
+      "practical": {
+        "kind": "heritage place",
+        "duration": "2–3 hours",
+        "map_query": "Baalbek Lebanon"
+      },
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "baalbek-story",
@@ -478,7 +1426,31 @@
         "Roman",
         "heritage"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "baalbek",
+          "relationship": "context"
+        },
+        {
+          "object_id": "beqaa",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "beqaa",
@@ -493,7 +1465,31 @@
         "region",
         "Lebanon"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      ],
+      "connections": [
+        {
+          "object_id": "baalbek",
+          "relationship": "context"
+        },
+        {
+          "object_id": "baalbek-story",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "lebanese-food-walk",
@@ -508,7 +1504,31 @@
         "walking",
         "Beirut"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "lebanese-table",
+          "relationship": "context"
+        },
+        {
+          "object_id": "bakery-kitchen",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "regional-food-story",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "bakery-kitchen",
@@ -523,7 +1543,31 @@
         "craft",
         "place"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "lebanese-table",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lebanese-food-walk",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "regional-food-story",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     },
     {
       "id": "regional-food-story",
@@ -538,7 +1582,31 @@
         "regions",
         "tradition"
       ],
-      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "image": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "media": [
+        "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      ],
+      "connections": [
+        {
+          "object_id": "lebanese-table",
+          "relationship": "context"
+        },
+        {
+          "object_id": "lebanese-food-walk",
+          "relationship": "thematic"
+        },
+        {
+          "object_id": "bakery-kitchen",
+          "relationship": "thematic"
+        }
+      ],
+      "practical": {},
+      "source": {
+        "label": "Editorial prototype"
+      },
+      "rights": {
+        "status": "licensed-or-prototype"
+      }
     }
   ],
   "reels": [
@@ -546,143 +1614,334 @@
       "id": "lisbon-maat",
       "destination": "Lisbon",
       "caption": "The building is only the beginning. Follow the riverfront from here.",
-      "direct": [
-        "maat",
-        "belem"
-      ],
-      "related": [
-        "lisbon-architecture",
-        "tagus-story"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/5/53/MAAT_Lisbon.jpg",
+      "objects": [
+        {
+          "object_id": "maat",
+          "role": "direct"
+        },
+        {
+          "object_id": "belem",
+          "role": "direct"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "role": "related"
+        },
+        {
+          "object_id": "tagus-story",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lisbon-alfama",
       "destination": "Lisbon",
       "caption": "You don’t have to find a monument to discover Lisbon. Sometimes the street is enough.",
-      "direct": [
-        "alfama"
-      ],
-      "related": [
-        "fado-story",
-        "alfama-viewpoint",
-        "alfama-food"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/5/5a/Alfama_Old_District_Lisbon.jpg",
+      "objects": [
+        {
+          "object_id": "alfama",
+          "role": "direct"
+        },
+        {
+          "object_id": "fado-story",
+          "role": "related"
+        },
+        {
+          "object_id": "alfama-viewpoint",
+          "role": "related"
+        },
+        {
+          "object_id": "alfama-food",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lisbon-calcada",
       "destination": "Lisbon",
       "caption": "Look down. Part of Lisbon’s identity is already under your feet.",
-      "direct": [
-        "calcada-portuguesa"
-      ],
-      "related": [
-        "rossio-baixa",
-        "public-space-pattern",
-        "lisbon-architecture"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/6/67/Pra%C3%A7a_Dom_Pedro_IV_Lisboa.jpg",
+      "objects": [
+        {
+          "object_id": "calcada-portuguesa",
+          "role": "direct"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "role": "related"
+        },
+        {
+          "object_id": "public-space-pattern",
+          "role": "related"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lisbon-make-taste",
       "destination": "Lisbon",
       "caption": "Some places are better understood by making something, not just looking at it.",
-      "direct": [
-        "pastry-workshop",
-        "pastry-place"
-      ],
-      "related": [
-        "pastry-story",
-        "alfama-food"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/d/db/Pastel_de_nata_closeu_up_Porto_Portugal_%2852787047151%29.jpg",
+      "objects": [
+        {
+          "object_id": "pastry-workshop",
+          "role": "direct"
+        },
+        {
+          "object_id": "pastry-place",
+          "role": "direct"
+        },
+        {
+          "object_id": "pastry-story",
+          "role": "related"
+        },
+        {
+          "object_id": "alfama-food",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lisbon-contemporary",
       "destination": "Lisbon",
       "caption": "Lisbon didn’t stop being built when the postcards were printed.",
-      "direct": [
-        "oriente"
-      ],
-      "related": [
-        "modern-lisbon",
-        "contemporary-thread",
-        "lisbon-architecture"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Lisbon_Oriente_Station_%2842264380264%29.jpg",
+      "objects": [
+        {
+          "object_id": "oriente",
+          "role": "direct"
+        },
+        {
+          "object_id": "modern-lisbon",
+          "role": "related"
+        },
+        {
+          "object_id": "contemporary-thread",
+          "role": "related"
+        },
+        {
+          "object_id": "lisbon-architecture",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lebanon-beirut",
       "destination": "Lebanon",
       "caption": "Beirut is not one story. Start with one street and follow what connects to it.",
-      "direct": [
-        "beirut"
-      ],
-      "related": [
-        "beirut-architecture",
-        "lebanese-table",
-        "beirut-neighbourhood"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/7/71/Beirut_Skyline.jpg",
+      "objects": [
+        {
+          "object_id": "beirut",
+          "role": "direct"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "role": "related"
+        },
+        {
+          "object_id": "lebanese-table",
+          "role": "related"
+        },
+        {
+          "object_id": "beirut-neighbourhood",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lebanon-mar-mikhael",
       "destination": "Lebanon",
       "caption": "One Beirut neighbourhood can contain architecture, food, craft and nightlife at once.",
-      "direct": [
-        "mar-mikhael",
-        "mar-mikhael-venue"
-      ],
-      "related": [
-        "beirut-architecture",
-        "beirut-food-walk",
-        "adjacent-beirut"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/a/af/%28february_2020%2C_before_the_blast%29_walking_in_Mar_Mikhael_%28Beirut%29_504_Peugeot_-_Flickr_-_tongeron91.jpg",
+      "objects": [
+        {
+          "object_id": "mar-mikhael",
+          "role": "direct"
+        },
+        {
+          "object_id": "mar-mikhael-venue",
+          "role": "direct"
+        },
+        {
+          "object_id": "beirut-architecture",
+          "role": "related"
+        },
+        {
+          "object_id": "beirut-food-walk",
+          "role": "related"
+        },
+        {
+          "object_id": "adjacent-beirut",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lebanon-byblos",
       "destination": "Lebanon",
       "caption": "History is more interesting when the town around it is still alive.",
-      "direct": [
-        "byblos",
-        "byblos-old-town"
-      ],
-      "related": [
-        "byblos-story",
-        "coastal-food",
-        "coast-to-beqaa"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/3/3c/Byblos_Libanon_2003.JPG",
+      "objects": [
+        {
+          "object_id": "byblos",
+          "role": "direct"
+        },
+        {
+          "object_id": "byblos-old-town",
+          "role": "direct"
+        },
+        {
+          "object_id": "byblos-story",
+          "role": "related"
+        },
+        {
+          "object_id": "coastal-food",
+          "role": "related"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lebanon-baalbek",
       "destination": "Lebanon",
       "caption": "The monument is extraordinary. The interesting part is what it connects to beyond itself.",
-      "direct": [
-        "baalbek"
-      ],
-      "related": [
-        "baalbek-story",
-        "beqaa",
-        "coast-to-beqaa"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/0/0c/Baalbek_-_temple_of_Jupiter.jpg",
+      "objects": [
+        {
+          "object_id": "baalbek",
+          "role": "direct"
+        },
+        {
+          "object_id": "baalbek-story",
+          "role": "related"
+        },
+        {
+          "object_id": "beqaa",
+          "role": "related"
+        },
+        {
+          "object_id": "coast-to-beqaa",
+          "role": "related"
+        }
+      ]
     },
     {
       "id": "lebanon-table",
       "destination": "Lebanon",
       "caption": "A Lebanese table is not one dish. It is a network of people, places and rituals.",
-      "direct": [
-        "lebanese-table"
+      "media": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG",
+      "objects": [
+        {
+          "object_id": "lebanese-table",
+          "role": "direct"
+        },
+        {
+          "object_id": "lebanese-food-walk",
+          "role": "related"
+        },
+        {
+          "object_id": "bakery-kitchen",
+          "role": "related"
+        },
+        {
+          "object_id": "regional-food-story",
+          "role": "related"
+        }
+      ]
+    }
+  ],
+  "journeys": [
+    {
+      "id": "lisbon-stone-sound-river",
+      "title": "Stone, Sound & River",
+      "destination": "Lisbon",
+      "description": "One way your saved Lisbon discoveries could flow together.",
+      "duration": "one day",
+      "nodes": [
+        {
+          "object_id": "alfama",
+          "role": "stop",
+          "time": "09:30",
+          "note": "Start slowly in the neighbourhood."
+        },
+        {
+          "object_id": "fado-story",
+          "role": "context",
+          "note": "Along the way"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "role": "stop",
+          "time": "12:00",
+          "note": "Pause around Baixa / Rossio."
+        },
+        {
+          "object_id": "calcada-portuguesa",
+          "role": "context",
+          "note": "Notice along the way"
+        },
+        {
+          "object_id": "belem",
+          "role": "stop",
+          "time": "14:30",
+          "note": "Move west toward the river."
+        },
+        {
+          "object_id": "maat",
+          "role": "stop",
+          "time": "15:00",
+          "note": "Architecture, art and the Tagus."
+        },
+        {
+          "object_id": "tagus-story",
+          "role": "context",
+          "note": "Stay with the river for a while."
+        }
       ],
-      "related": [
-        "lebanese-food-walk",
-        "bakery-kitchen",
-        "regional-food-story"
-      ],
-      "media": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Mixedlebanesefood.JPG"
+      "slower_nodes": [
+        {
+          "object_id": "alfama",
+          "role": "stop",
+          "time": "10:00",
+          "note": "Give the morning to Alfama."
+        },
+        {
+          "object_id": "fado-story",
+          "role": "context",
+          "note": "Along the way"
+        },
+        {
+          "object_id": "rossio-baixa",
+          "role": "stop",
+          "time": "13:00",
+          "note": "Drift into Baixa when you are ready."
+        },
+        {
+          "object_id": "calcada-portuguesa",
+          "role": "context",
+          "note": "Notice under your feet"
+        },
+        {
+          "object_id": "maat",
+          "role": "stop",
+          "time": "16:30",
+          "note": "Finish slowly by the river."
+        },
+        {
+          "object_id": "tagus-story",
+          "role": "context",
+          "note": "Continue from here whenever you want."
+        }
+      ]
     }
   ]
 }
