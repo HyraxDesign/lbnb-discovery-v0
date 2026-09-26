@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>LBNB · Discovery V0.8</title>
+<title>LBNB · Discovery V0.9.2</title>
 <meta name="theme-color" content="#111111">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -27,7 +27,8 @@ button{font:inherit}
 #feed{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}
 #feed::-webkit-scrollbar{display:none}
 .reel{position:relative;width:100%;height:100%;scroll-snap-align:start;overflow:hidden;background:linear-gradient(160deg,#555,#171717)}
-.reelBg{position:absolute;inset:0;background-size:cover;background-position:center;transform:scale(1.02)}
+.reelBg{position:absolute;inset:0;overflow:hidden;transform:scale(1.02)}
+.reelBg img{width:100%;height:100%;object-fit:cover;display:block}
 .reelBg::after{content:"";position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.08) 28%,rgba(0,0,0,.16) 48%,rgba(0,0,0,.82) 92%)}
 .reelFallback{position:absolute;inset:0;display:grid;place-items:center;font-size:11vw;font-weight:800;letter-spacing:-.06em;opacity:.14;overflow:hidden}
 @media(min-width:700px){.reelFallback{font-size:62px}}
@@ -44,14 +45,16 @@ button{font:inherit}
 .railLabel b{font-size:10px;color:#fff;margin-top:2px;line-height:1.05}
 .sep{flex:0 0 1px;background:rgba(255,255,255,.2);margin:8px 3px}
 .card{flex:0 0 148px;height:154px;border:0;border-radius:16px;overflow:hidden;background:#f6f5f2;color:#171717;text-align:left;padding:0;box-shadow:0 8px 24px rgba(0,0,0,.16);cursor:pointer}
-.cardVisual{height:80px;background:linear-gradient(145deg,#b7b0a4,#666);background-size:cover;background-position:center}
+.cardVisual{height:80px;background:linear-gradient(145deg,#b7b0a4,#666);overflow:hidden}
+.cardVisual img{width:100%;height:100%;object-fit:cover;display:block}
 .cardCopy{padding:8px 10px}
 .cardCopy small{display:block;text-transform:uppercase;letter-spacing:.08em;color:#777;font-size:8px;margin-bottom:4px}
 .cardCopy strong{display:block;font-size:12px;line-height:1.15}
 .cardCopy span{display:block;color:#777;font-size:9px;margin-top:4px}
 .sheetBackdrop{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.38)}
 .sheet{position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:60;width:min(100%,520px);max-height:84dvh;overflow:auto;background:#f7f6f2;color:#171717;border-radius:24px 24px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.3)}
-.sheetHero{height:210px;position:relative;background:linear-gradient(145deg,#aaa397,#555);background-size:cover;background-position:center}
+.sheetHero{height:210px;position:relative;background:linear-gradient(145deg,#aaa397,#555);overflow:hidden}
+.sheetHero img{width:100%;height:100%;object-fit:cover;display:block}
 .close{position:absolute;top:13px;right:13px;width:38px;height:38px;border:0;border-radius:50%;background:rgba(0,0,0,.48);color:#fff;font-size:22px}
 .sheetBody{padding:20px}
 .eyebrow{text-transform:uppercase;letter-spacing:.09em;color:#777;font-size:9px;margin:0 0 5px}
@@ -75,7 +78,8 @@ button{font:inherit}
 .collection h2{font-size:18px;margin:0 0 11px}
 .savedGrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:11px}
 .savedCard{position:relative;border:0;border-radius:16px;background:#fff;overflow:hidden;text-align:left;color:#161616;padding:0;box-shadow:0 6px 20px rgba(0,0,0,.05)}
-.savedVisual{height:120px;background:linear-gradient(145deg,#b7b0a4,#666);background-size:cover;background-position:center}
+.savedVisual{height:120px;background:linear-gradient(145deg,#b7b0a4,#666);overflow:hidden}
+.savedVisual img{width:100%;height:100%;object-fit:cover;display:block}
 .savedCard .copy{padding:12px}
 .savedCard small{text-transform:uppercase;color:#777;font-size:8px;letter-spacing:.08em}
 .savedCard h3{font-size:15px;margin:5px 0 3px}
@@ -93,7 +97,8 @@ button{font:inherit}
 .time{padding-top:16px;font-size:10px;color:#777;font-weight:700}
 .dot{position:absolute;left:32px;top:19px;width:10px;height:10px;border-radius:50%;background:#111;border:3px solid #f6f5f2}
 .stopCard{display:grid;grid-template-columns:88px 1fr;border:0;border-radius:16px;background:#fff;overflow:hidden;text-align:left;color:#161616;padding:0;box-shadow:0 6px 20px rgba(0,0,0,.05)}
-.stopVisual{height:104px;background:linear-gradient(145deg,#b7b0a4,#666);background-size:cover;background-position:center}
+.stopVisual{height:104px;background:linear-gradient(145deg,#b7b0a4,#666);overflow:hidden}
+.stopVisual img{width:100%;height:100%;object-fit:cover;display:block}
 .stopCard .copy{padding:12px}
 .stopCard small{text-transform:uppercase;color:#777;font-size:8px;letter-spacing:.08em}
 .stopCard h3{font-size:15px;margin:4px 0}
@@ -111,9 +116,9 @@ input[type=file]{display:none}
 </head>
 <body>
 <div id="app">
-  <div class="loader" id="loader"><div><b>LBNB · Discovery V0.8</b><p id="loadMessage">Loading content…</p><button id="loadFileBtn" hidden>Load content JSON</button><input id="contentFile" type="file" accept=".json"></div></div>
+  <div class="loader" id="loader"><div><b>LBNB · Discovery V0.9.2</b><p id="loadMessage">Loading content…</p><button id="loadFileBtn" hidden>Load content JSON</button><input id="contentFile" type="file" accept=".json"></div></div>
   <div class="topbar">
-    <button class="pill" id="homeBtn">LBNB <small>V0.8</small></button>
+    <button class="pill" id="homeBtn">LBNB <small>V0.9.2</small></button>
     <button class="pill" id="savedBtn">＋ <span id="savedCount">0</span></button>
   </div>
   <main id="feed"></main>
@@ -156,7 +161,7 @@ function readSaved(){try{return JSON.parse(localStorage.getItem(SAVED_KEY)||'[]'
 function writeSaved(ids){localStorage.setItem(SAVED_KEY,JSON.stringify(ids));$('savedCount').textContent=ids.length}
 function toggleSaved(id){let s=readSaved();let on=s.includes(id);s=on?s.filter(x=>x!==id):[...s,id];writeSaved(s);return !on}
 function destination(o){return o.destination||o.city||o.area||'My Places'}
-function visualStyle(o){return o&&o.image?`background-image:url("${o.image.replace(/"/g,'%22')}")`:''}
+function visualStyle(o){return o&&o.image?o.image:''}
 function showToast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1300)}
 function shuffle(a){a=[...a];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
 
@@ -164,10 +169,10 @@ async function loadContent(){
   let loaded=null;
   // Hosted build: curator output is read directly.
   if(location.protocol!=='file:'){
-    try{const r=await fetch('./lbnb-content-v0.json',{cache:'no-store'});if(r.ok)loaded=await r.json()}catch(e){}
+    try{const r=await fetch('./lbnb-content-v0.json?v=092',{cache:'reload'});if(r.ok)loaded=await r.json()}catch(e){}
   }
   // Local review: use last manually loaded content if available.
-  if(!valid(loaded)){
+  if(!valid(loaded) && location.protocol==='file:'){
     try{const cached=JSON.parse(localStorage.getItem(CONTENT_KEY)||'null');if(valid(cached))loaded=cached}catch(e){}
   }
   // Reliable fallback so the file never opens as a black shell.
@@ -183,7 +188,7 @@ $('contentFile').onchange=async e=>{try{const d=JSON.parse(await e.target.files[
 
 function cardHTML(o){
   if(!o)return'';
-  return `<button class="card" data-object="${esc(o.id)}"><div class="cardVisual" style="${visualStyle(o)}"></div><div class="cardCopy"><small>${esc(o.type)}</small><strong>${esc(o.title)}</strong><span>${esc(o.area||o.destination||'')}</span></div></button>`;
+  return `<button class="card" data-object="${esc(o.id)}"><div class="cardVisual">${o.image?`<img src="${esc(o.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</div><div class="cardCopy"><small>${esc(o.type)}</small><strong>${esc(o.title)}</strong><span>${esc(o.area||o.destination||'')}</span></div></button>`;
 }
 function orderedReels(){
   const requested=new URLSearchParams(location.search).get('r');
@@ -200,7 +205,7 @@ function renderFeed(){
   $('feed').innerHTML=reels.map((r,i)=>{
     const first=objects[(r.direct||[])[0]]||objects[(r.related||[])[0]];
     return `<section class="reel" data-reel="${esc(r.id)}">
-      <div class="reelBg" style="${visualStyle(first)}"></div>
+      <div class="reelBg">${(r.media||first?.image)?`<img src="${esc(r.media||first.image)}" alt="" loading="${i===0?'eager':'lazy'}" referrerpolicy="no-referrer">`:''}</div>
       <div class="reelFallback">${esc((r.destination||'DISCOVER').toUpperCase())}</div>
       <div class="reelCopy"><div class="reelMeta">${esc(r.destination||'DISCOVER')} · discovery</div><p class="caption">${esc(r.caption||'')}</p></div>
       <div class="rail">
@@ -221,7 +226,7 @@ function connected(o){
 }
 function openObject(o){
   const saved=readSaved().includes(o.id), rel=connected(o);
-  $('sheet').innerHTML=`<div class="sheetHero" style="${visualStyle(o)}"><button class="close" id="closeSheet">×</button></div>
+  $('sheet').innerHTML=`<div class="sheetHero">${o.image?`<img src="${esc(o.image)}" alt="" referrerpolicy="no-referrer">`:''}<button class="close" id="closeSheet">×</button></div>
     <div class="sheetBody"><p class="eyebrow">${esc(o.type)} · ${esc(o.area||o.destination||'')}</p><h2>${esc(o.title)}</h2><p>${esc(o.summary||'')}</p>
     <div class="actions"><button class="primary" id="saveObject">${saved?'Saved ✓':'＋ Save'}</button><button id="shareObject">Share</button></div>
     <div class="section"><h3>${o.type==='experience'?'The experience':'Why it matters'}</h3><p>${esc(o.why||'')}</p></div>
@@ -240,7 +245,7 @@ function openSaved(){
   closeSheet();const g=groups(), dests=Object.keys(g), count=readSaved().length;
   $('savedTitle').textContent=dests.length===1?`My ${dests[0]}`:'My Places';
   $('savedSub').textContent=count?'A personal collection first. A Journey only when you need one.':'Everything you save becomes material for a future Journey.';
-  $('savedCollections').innerHTML=count?dests.map(d=>`<section class="collection"><h2>${dests.length>1?'My '+esc(d):''}</h2><div class="savedGrid">${g[d].map(o=>`<article class="savedCard" data-saved="${esc(o.id)}"><div class="savedVisual" style="${visualStyle(o)}"></div><div class="copy"><small>${esc(o.type)}</small><h3>${esc(o.title)}</h3><p>${esc(o.area||o.destination||'')}</p></div><button class="remove" data-remove="${esc(o.id)}">×</button></article>`).join('')}</div></section>`).join(''):`<p style="color:#777;text-align:center;margin-top:15vh">Nothing saved yet. Use ＋ while discovering.</p>`;
+  $('savedCollections').innerHTML=count?dests.map(d=>`<section class="collection"><h2>${dests.length>1?'My '+esc(d):''}</h2><div class="savedGrid">${g[d].map(o=>`<article class="savedCard" data-saved="${esc(o.id)}"><div class="savedVisual">${o.image?`<img src="${esc(o.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</div><div class="copy"><small>${esc(o.type)}</small><h3>${esc(o.title)}</h3><p>${esc(o.area||o.destination||'')}</p></div><button class="remove" data-remove="${esc(o.id)}">×</button></article>`).join('')}</div></section>`).join(''):`<p style="color:#777;text-align:center;margin-top:15vh">Nothing saved yet. Use ＋ while discovering.</p>`;
   document.querySelectorAll('[data-saved]').forEach(el=>el.onclick=e=>{if(!e.target.closest('[data-remove]'))openObject(objects[el.dataset.saved])});
   document.querySelectorAll('[data-remove]').forEach(el=>el.onclick=e=>{e.stopPropagation();toggleSaved(el.dataset.remove);openSaved()});
   const eligible=Object.entries(g).filter(([,a])=>a.length>=2).sort((a,b)=>b[1].length-a[1].length);
@@ -258,7 +263,7 @@ function journeyPlan(dest){
 function renderJourney(){
   const plan=journeyPlan(journeyDestination);$('journeyTitle').textContent=`Your ${journeyDestination} day`;
   $('journeyLead').textContent=journeyMode==='slow'?'A slower proposal with more room between stops.':'A first proposal from what you saved. Nothing is fixed.';
-  $('timeline').innerHTML=plan.map(s=>`<div class="stop"><div class="time">${s.time}</div><div class="dot"></div><button class="stopCard" data-stop="${esc(s.o.id)}"><div class="stopVisual" style="${visualStyle(s.o)}"></div><div class="copy"><small>${esc(s.o.type)}</small><h3>${esc(s.o.title)}</h3><p>${esc(s.o.area||s.o.destination||'')}</p></div></button></div>`).join('');
+  $('timeline').innerHTML=plan.map(s=>`<div class="stop"><div class="time">${s.time}</div><div class="dot"></div><button class="stopCard" data-stop="${esc(s.o.id)}"><div class="stopVisual">${s.o.image?`<img src="${esc(s.o.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</div><div class="copy"><small>${esc(s.o.type)}</small><h3>${esc(s.o.title)}</h3><p>${esc(s.o.area||s.o.destination||'')}</p></div></button></div>`).join('');
   document.querySelectorAll('[data-stop]').forEach(el=>el.onclick=()=>openObject(objects[el.dataset.stop]));
 }
 function openJourney(dest){$('savedView').hidden=true;journeyDestination=dest;journeyMode='full';rotation=0;renderJourney();$('journeyView').hidden=false}
