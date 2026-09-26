@@ -3,14 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>LBNB · Discovery V0.6</title>
+<title>LBNB · Discovery V0.8</title>
+<meta name="theme-color" content="#111111">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="LBNB V0">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icons/icon-180.png">
+<link rel="icon" type="image/svg+xml" href="./icons/icon.svg">
 <style>
 *{box-sizing:border-box} html,body{margin:0;width:100%;height:100%;background:#171717;font-family:Inter,Arial,sans-serif;color:#fff;overflow:hidden}
 button{font:inherit}
 #app{position:relative;width:100vw;height:100dvh;overflow:hidden;background:#111}
 @media(min-width:700px){
   body{display:flex;align-items:center;justify-content:center;padding:18px}
-  #app{width:min(calc(92vh*9/16),calc(100vw - 36px));height:min(92vh,calc((100vw - 36px)*16/9));border-radius:26px;box-shadow:0 24px 70px rgba(0,0,0,.42)}
+  #app{
+    width:min(calc(94vh*9/16),430px);
+    height:min(94vh,764px);
+    border-radius:28px;
+    box-shadow:0 24px 70px rgba(0,0,0,.42)
+  }
 }
 #feed{height:100%;overflow-y:auto;scroll-snap-type:y mandatory;scrollbar-width:none}
 #feed::-webkit-scrollbar{display:none}
@@ -22,20 +34,20 @@ button{font:inherit}
 .topbar{position:absolute;z-index:20;top:max(14px,env(safe-area-inset-top));left:14px;right:14px;display:flex;align-items:center;justify-content:space-between;pointer-events:none}
 .pill{pointer-events:auto;border:1px solid rgba(255,255,255,.14);background:rgba(0,0,0,.42);color:#fff;border-radius:999px;min-height:42px;padding:0 14px;display:flex;align-items:center;gap:8px;backdrop-filter:blur(9px);font-weight:700}
 .pill small{opacity:.55;font-size:10px}
-.reelCopy{position:absolute;left:18px;right:18px;bottom:228px;z-index:5;text-shadow:0 1px 12px rgba(0,0,0,.35)}
+.reelCopy{position:absolute;left:18px;right:18px;bottom:190px;z-index:5;text-shadow:0 1px 12px rgba(0,0,0,.35)}
 .reelMeta{font-size:10px;letter-spacing:.09em;text-transform:uppercase;opacity:.75;margin-bottom:7px}
-.caption{margin:0;max-width:92%;font-size:24px;line-height:1.08;font-weight:750}
-.rail{position:absolute;left:0;right:0;bottom:max(18px,env(safe-area-inset-bottom));z-index:7;display:flex;align-items:stretch;gap:10px;overflow-x:auto;padding:0 16px 4px;scrollbar-width:none}
+.caption{margin:0;max-width:92%;font-size:22px;line-height:1.1;font-weight:750}
+.rail{position:absolute;left:0;right:0;bottom:max(14px,env(safe-area-inset-bottom));z-index:7;display:flex;align-items:flex-end;gap:9px;overflow-x:auto;padding:0 16px 3px;scrollbar-width:none;scroll-padding-left:16px}
 .rail::-webkit-scrollbar{display:none}
-.railLabel{flex:0 0 68px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:15px;color:rgba(255,255,255,.7)}
-.railLabel span{font-size:8px;font-weight:700;letter-spacing:.08em}
-.railLabel b{font-size:11px;color:#fff;margin-top:2px}
+.railLabel{flex:0 0 72px;display:flex;flex-direction:column;justify-content:flex-end;padding:0 2px 12px;color:rgba(255,255,255,.7);white-space:normal;overflow:visible}
+.railLabel span{font-size:7px;font-weight:700;letter-spacing:.08em;line-height:1.1}
+.railLabel b{font-size:10px;color:#fff;margin-top:2px;line-height:1.05}
 .sep{flex:0 0 1px;background:rgba(255,255,255,.2);margin:8px 3px}
-.card{flex:0 0 164px;height:176px;border:0;border-radius:17px;overflow:hidden;background:#f6f5f2;color:#171717;text-align:left;padding:0;box-shadow:0 8px 26px rgba(0,0,0,.16);cursor:pointer}
-.cardVisual{height:96px;background:linear-gradient(145deg,#b7b0a4,#666);background-size:cover;background-position:center}
-.cardCopy{padding:10px 11px}
+.card{flex:0 0 148px;height:154px;border:0;border-radius:16px;overflow:hidden;background:#f6f5f2;color:#171717;text-align:left;padding:0;box-shadow:0 8px 24px rgba(0,0,0,.16);cursor:pointer}
+.cardVisual{height:80px;background:linear-gradient(145deg,#b7b0a4,#666);background-size:cover;background-position:center}
+.cardCopy{padding:8px 10px}
 .cardCopy small{display:block;text-transform:uppercase;letter-spacing:.08em;color:#777;font-size:8px;margin-bottom:4px}
-.cardCopy strong{display:block;font-size:13px;line-height:1.15}
+.cardCopy strong{display:block;font-size:12px;line-height:1.15}
 .cardCopy span{display:block;color:#777;font-size:9px;margin-top:4px}
 .sheetBackdrop{position:fixed;inset:0;z-index:50;background:rgba(0,0,0,.38)}
 .sheet{position:fixed;left:50%;bottom:0;transform:translateX(-50%);z-index:60;width:min(100%,520px);max-height:84dvh;overflow:auto;background:#f7f6f2;color:#171717;border-radius:24px 24px 0 0;box-shadow:0 -20px 60px rgba(0,0,0,.3)}
@@ -99,9 +111,9 @@ input[type=file]{display:none}
 </head>
 <body>
 <div id="app">
-  <div class="loader" id="loader"><div><b>LBNB · Discovery V0.6</b><p id="loadMessage">Loading content…</p><button id="loadFileBtn" hidden>Load content JSON</button><input id="contentFile" type="file" accept=".json"></div></div>
+  <div class="loader" id="loader"><div><b>LBNB · Discovery V0.8</b><p id="loadMessage">Loading content…</p><button id="loadFileBtn" hidden>Load content JSON</button><input id="contentFile" type="file" accept=".json"></div></div>
   <div class="topbar">
-    <button class="pill" id="homeBtn">LBNB <small>V0.6</small></button>
+    <button class="pill" id="homeBtn">LBNB <small>V0.8</small></button>
     <button class="pill" id="savedBtn">＋ <span id="savedCount">0</span></button>
   </div>
   <main id="feed"></main>
@@ -257,6 +269,9 @@ $('slower').onclick=()=>{journeyMode='slow';$('slower').classList.add('active');
 $('change').onclick=()=>{rotation++;renderJourney();showToast('Changed one thing')};
 $('confirmJourney').onclick=()=>{localStorage.setItem(JOURNEY_KEY,JSON.stringify({destination:journeyDestination,status:'planned',mode:journeyMode,rotation,updatedAt:new Date().toISOString()}));$('journeyStatus').textContent='Planned ✓';$('confirmJourney').textContent='Planned ✓';showToast('Journey saved as planned')};
 
+if('serviceWorker' in navigator && location.protocol!=='file:'){
+  window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+}
 loadContent().then(()=>{
   const requested=new URLSearchParams(location.search).get('o');
   if(requested&&objects[requested])setTimeout(()=>openObject(objects[requested]),50);
