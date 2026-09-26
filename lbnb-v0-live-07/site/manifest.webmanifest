@@ -1,8 +1,8 @@
 {
-  "name": "NAVA V1 Prototype",
+  "name": "NAVA",
   "short_name": "NAVA",
-  "description": "Connected place discovery prototype",
-  "start_url": "./",
+  "description": "Connected place discovery",
+  "start_url": "./?v=111",
   "scope": "./",
   "display": "standalone",
   "background_color": "#111111",

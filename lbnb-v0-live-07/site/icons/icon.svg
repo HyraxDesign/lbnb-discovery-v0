@@ -1,5 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
-<rect width="512" height="512" rx="112" fill="#111111"/>
-<text x="256" y="262" text-anchor="middle" fill="#ffffff" font-family="Arial,Helvetica,sans-serif" font-size="116" font-weight="700" letter-spacing="3">LBNB</text>
-<text x="256" y="338" text-anchor="middle" fill="#9a9a9a" font-family="Arial,Helvetica,sans-serif" font-size="46" font-weight="700" letter-spacing="10">V0</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><rect width="512" height="512" fill="#101010"/><text x="256" y="250" text-anchor="middle" fill="white" font-family="Arial,sans-serif" font-size="104" letter-spacing="12">NAVA</text><path d="M145 347 L200 316 L256 353 L312 310 L368 347" fill="none" stroke="#bdbdbd" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
