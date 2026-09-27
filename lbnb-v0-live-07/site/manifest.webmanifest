@@ -1,8 +1,8 @@
 {
   "name": "NAVA",
   "short_name": "NAVA",
-  "description": "Connected place discovery",
-  "start_url": "./?v=111",
+  "description": "Connected place discovery, Journey planning and day-of-use prototype",
+  "start_url": "./?v=120",
   "scope": "./",
   "display": "standalone",
   "background_color": "#111111",

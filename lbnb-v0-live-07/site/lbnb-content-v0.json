@@ -1,5 +1,5 @@
 {
-  "version": "1.1-lebanon-pilot",
+  "version": "1.2",
   "objects": [
     {
       "id": "maat",
@@ -148,6 +148,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -538,6 +541,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -741,6 +747,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -1082,6 +1091,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -1364,6 +1376,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -1528,6 +1543,9 @@
       },
       "rights": {
         "status": "licensed-or-prototype"
+      },
+      "booking": {
+        "mode": "manual_capture"
       }
     },
     {
@@ -1883,6 +1901,10 @@
         "property_id": 497,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -1931,6 +1953,10 @@
         "property_id": 489,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -1981,6 +2007,10 @@
         "property_id": 485,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2024,6 +2054,10 @@
         "property_id": 482,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2069,6 +2103,10 @@
         "property_id": 486,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2115,6 +2153,10 @@
         "property_id": 481,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2163,6 +2205,10 @@
         "property_id": 477,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2213,6 +2259,10 @@
         "property_id": 496,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2275,6 +2325,10 @@
         "property_id": 475,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2318,6 +2372,10 @@
         "property_id": 484,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2372,6 +2430,10 @@
         "property_id": 466,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2420,6 +2482,10 @@
         "property_id": 495,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2474,6 +2540,10 @@
         "property_id": 470,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2521,6 +2591,10 @@
         "property_id": 467,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2570,6 +2644,10 @@
         "property_id": 483,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2620,6 +2698,10 @@
         "property_id": 461,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2671,6 +2753,10 @@
         "property_id": 479,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2721,6 +2807,10 @@
         "property_id": 455,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2771,6 +2861,10 @@
         "property_id": 456,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2818,6 +2912,10 @@
         "property_id": 478,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2873,6 +2971,10 @@
         "property_id": 474,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2923,6 +3025,10 @@
         "property_id": 438,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -2981,6 +3087,10 @@
         "property_id": 442,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3035,6 +3145,10 @@
         "property_id": 437,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3085,6 +3199,10 @@
         "property_id": 468,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3135,6 +3253,10 @@
         "property_id": 454,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3185,6 +3307,10 @@
         "property_id": 443,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3239,6 +3365,10 @@
         "property_id": 422,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3285,6 +3415,10 @@
         "property_id": 434,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3334,6 +3468,10 @@
         "property_id": 450,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3381,6 +3519,10 @@
         "property_id": 452,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3431,6 +3573,10 @@
         "property_id": 464,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3481,6 +3627,10 @@
         "property_id": 433,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3524,6 +3674,10 @@
         "property_id": 446,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3582,6 +3736,10 @@
         "property_id": 423,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3629,6 +3787,10 @@
         "property_id": 465,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3676,6 +3838,10 @@
         "property_id": 436,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3734,6 +3900,10 @@
         "property_id": 429,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3788,6 +3958,10 @@
         "property_id": 469,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3838,6 +4012,10 @@
         "property_id": 457,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3900,6 +4078,10 @@
         "property_id": 426,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -3950,6 +4132,10 @@
         "property_id": 445,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4000,6 +4186,10 @@
         "property_id": 440,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4049,6 +4239,10 @@
         "property_id": 410,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4099,6 +4293,10 @@
         "property_id": 397,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4153,6 +4351,10 @@
         "property_id": 393,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4200,6 +4402,10 @@
         "property_id": 431,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4254,6 +4460,10 @@
         "property_id": 409,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4301,6 +4511,10 @@
         "property_id": 435,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4351,6 +4565,10 @@
         "property_id": 439,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4401,6 +4619,10 @@
         "property_id": 383,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4451,6 +4673,10 @@
         "property_id": 387,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4501,6 +4727,10 @@
         "property_id": 386,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4551,6 +4781,10 @@
         "property_id": 405,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4609,6 +4843,10 @@
         "property_id": 424,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4663,6 +4901,10 @@
         "property_id": 419,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4721,6 +4963,10 @@
         "property_id": 427,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4771,6 +5017,10 @@
         "property_id": 411,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4821,6 +5071,10 @@
         "property_id": 373,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4879,6 +5133,10 @@
         "property_id": 425,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4936,6 +5194,10 @@
         "property_id": 428,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -4990,6 +5252,10 @@
         "property_id": 372,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5040,6 +5306,10 @@
         "property_id": 420,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5094,6 +5364,10 @@
         "property_id": 395,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5148,6 +5422,10 @@
         "property_id": 390,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5198,6 +5476,10 @@
         "property_id": 385,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5248,6 +5530,10 @@
         "property_id": 380,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5302,6 +5588,10 @@
         "property_id": 368,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5356,6 +5646,10 @@
         "property_id": 374,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5406,6 +5700,10 @@
         "property_id": 412,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5456,6 +5754,10 @@
         "property_id": 371,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5510,6 +5812,10 @@
         "property_id": 408,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5560,6 +5866,10 @@
         "property_id": 370,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5614,6 +5924,10 @@
         "property_id": 367,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5668,6 +5982,10 @@
         "property_id": 391,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5712,6 +6030,10 @@
         "property_id": 364,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5762,6 +6084,10 @@
         "property_id": 366,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5816,6 +6142,10 @@
         "property_id": 359,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5862,6 +6192,10 @@
         "property_id": 350,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5912,6 +6246,10 @@
         "property_id": 354,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -5959,6 +6297,10 @@
         "property_id": 329,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6009,6 +6351,10 @@
         "property_id": 363,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6059,6 +6405,10 @@
         "property_id": 360,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6109,6 +6459,10 @@
         "property_id": 315,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6159,6 +6513,10 @@
         "property_id": 323,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6213,6 +6571,10 @@
         "property_id": 319,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6263,6 +6625,10 @@
         "property_id": 361,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6308,6 +6674,10 @@
         "property_id": 328,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6359,6 +6729,10 @@
         "property_id": 355,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6413,6 +6787,10 @@
         "property_id": 313,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6463,6 +6841,10 @@
         "property_id": 308,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6512,6 +6894,10 @@
         "property_id": 333,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6566,6 +6952,10 @@
         "property_id": 303,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6625,6 +7015,10 @@
         "property_id": 345,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6675,6 +7069,10 @@
         "property_id": 293,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6725,6 +7123,10 @@
         "property_id": 316,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6775,6 +7177,10 @@
         "property_id": 312,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6820,6 +7226,10 @@
         "property_id": 324,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6874,6 +7284,10 @@
         "property_id": 309,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6927,6 +7341,10 @@
         "property_id": 215,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -6974,6 +7392,10 @@
         "property_id": 317,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7028,6 +7450,10 @@
         "property_id": 305,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7075,6 +7501,10 @@
         "property_id": 18,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7125,6 +7555,10 @@
         "property_id": 13,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7174,6 +7608,10 @@
         "property_id": 91,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7227,6 +7665,10 @@
         "property_id": 231,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7281,6 +7723,10 @@
         "property_id": 79,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7328,6 +7774,10 @@
         "property_id": 344,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7373,6 +7823,10 @@
         "property_id": 20,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7423,6 +7877,10 @@
         "property_id": 302,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7475,6 +7933,10 @@
         "property_id": 216,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7525,6 +7987,10 @@
         "property_id": 357,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7575,6 +8041,10 @@
         "property_id": 240,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7625,6 +8095,10 @@
         "property_id": 290,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7674,6 +8148,10 @@
         "property_id": 264,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7728,6 +8206,10 @@
         "property_id": 263,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7780,6 +8262,10 @@
         "property_id": 295,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7829,6 +8315,10 @@
         "property_id": 265,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7883,6 +8373,10 @@
         "property_id": 304,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7937,6 +8431,10 @@
         "property_id": 218,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -7987,6 +8485,10 @@
         "property_id": 288,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8039,6 +8541,10 @@
         "property_id": 217,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8089,6 +8595,10 @@
         "property_id": 9,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8139,6 +8649,10 @@
         "property_id": 266,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8189,6 +8703,10 @@
         "property_id": 262,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8239,6 +8757,10 @@
         "property_id": 140,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8289,6 +8811,10 @@
         "property_id": 257,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8336,6 +8862,10 @@
         "property_id": 24,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8383,6 +8913,10 @@
         "property_id": 16,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     },
     {
@@ -8430,6 +8964,10 @@
         "property_id": 17,
         "claim_status": "unclaimed",
         "publication": "published"
+      },
+      "booking": {
+        "mode": "claim_required",
+        "status": "reconfirming"
       }
     }
   ],
@@ -8906,6 +9444,8 @@
   ],
   "pilot": {
     "legacy_places": 130,
-    "legacy_rule": "Published + Admin Approved + Verified; duplicates removed; no old credentials or host emails included."
+    "legacy_rule": "Published + Admin Approved + Verified; duplicates removed; no old credentials or host emails included.",
+    "build": "V1.2 Journey Operating Layer",
+    "notes": "Adds persistent planned Journeys, horizontal itinerary, calendar, bookings state and contextual map view. Legacy stay images gracefully fall back when old archive URLs no longer resolve."
   }
 }
