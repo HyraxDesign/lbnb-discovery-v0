@@ -1,9 +1,10 @@
-name: Deploy LBNB Discovery V0
+name: Deploy NAVA Pilot
 
 on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: read
