@@ -1,0 +1,46 @@
+const {JSDOM}=require('jsdom');
+const fs=require('node:fs'),assert=require('node:assert/strict');
+const root='lbnb-v0-live-07/site/';
+(async()=>{
+ const dom=new JSDOM(fs.readFileSync(root+'index.html','utf8').replace(/<script[\s\S]*?<\/script>/g,''),{url:'http://localhost/',runScripts:'dangerously',pretendToBeVisual:true});
+ const w=dom.window;
+ w.fetch=async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'lbnb-content-v0.json','utf8'))});
+ w.HTMLElement.prototype.scrollIntoView=function(){};
+ w.HTMLElement.prototype.scrollTo=function(){};
+ const inline=fs.readFileSync(root+'index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
+ for(const source of [inline,fs.readFileSync(root+'v151-media.js','utf8'),fs.readFileSync(root+'v16.js','utf8')]){const script=w.document.createElement('script');script.textContent=source;w.document.body.append(script)}
+ await new Promise(r=>setTimeout(r,200));
+ const e=s=>w.eval(s),click=id=>w.document.getElementById(id).click();
+ e('openDatePicker()');assert.equal(w.document.querySelectorAll('.rangePicker').length,1);
+ const day=w.document.querySelector('.rangeGrid [data-date]:not([disabled])');day.click();
+ assert.equal(e("$('journeyStartInput').value"),day.dataset.date);
+ e("writePlan({planned:true,start_date:'',end_date:''});openJourney('edit')");
+ assert.match(w.document.getElementById('journeyContent').textContent,/Dates undecided/);
+ const stay=e("data.objects.find(o=>o.subtype==='stay').id");
+ e(`openObject(obj(${JSON.stringify(stay)}));openBookingSheet(obj(${JSON.stringify(stay)}))`);
+ e("$('bookingStart').value='2026-10-05';$('bookingEnd').value='2026-10-07'");click('saveBooking');
+ assert.equal(e('readBookings()[0].status'),'planned');
+ assert.match(w.document.querySelector('.bookingPanel').textContent,/No request has been sent/);
+ e("openJourney('edit')");assert.equal(w.document.querySelectorAll('[data-node-key^="anchor-"]').length,0);
+ e(`openBookingSheet(obj(${JSON.stringify(stay)}))`);
+ e("$('bookingEnd').value='2026-10-05'");click('saveBooking');
+ assert.equal(e('readBookings()[0].end_date'),'2026-10-07');
+ e("$('bookingEnd').value='2026-10-08'");click('saveBooking');
+ assert.match(w.document.getElementById('toast').textContent,/Plan updated/);
+ e(`openBookingSheet(obj(${JSON.stringify(stay)}))`);click('removeBooking');assert.equal(e('readBookings().length'),0);
+ // Same destination + range overlap, inactive request exclusion.
+ e(`objects['test-lisbon-stay']={id:'test-lisbon-stay',subtype:'stay',destination:'Lisbon'};writePlan({planned:true,start_date:'2026-10-05',end_date:'2026-10-06'});writeBookings([{object_id:'test-lisbon-stay',start_date:'2026-10-04',end_date:'2026-10-07',status:'planned'}])`);
+ assert.equal(e('journeyAnchors([]).length'),1);
+ e("writeBookings([{object_id:'test-lisbon-stay',start_date:'2026-10-09',end_date:'2026-10-10',status:'planned'}])");assert.equal(e('journeyAnchors([]).length'),0);
+ e("writeBookings([{object_id:'test-lisbon-stay',start_date:'2026-10-04',end_date:'2026-10-07',status:'cancelled',source:'host'}])");assert.equal(e('journeyAnchors([]).length'),0);
+ e("closeSheet();openReelFullscreen(document.querySelector('#feed .reel'))");
+ const first=w.document.querySelector('#reelFullscreenContent .reel').dataset.reel;e('stepFullscreen(1)');
+ assert.notEqual(w.document.querySelector('#reelFullscreenContent .reel').dataset.reel,first);
+ assert.ok(w.document.querySelector('#reelFullscreenContent .rail'));
+ const order=e('JSON.stringify(orderedReels().map(r=>r.id))');assert.equal(e('JSON.stringify(orderedReels().map(r=>r.id))'),order);
+ e("localStorage.setItem(BOOKINGS_KEY,'{}');localStorage.setItem(SAVED_KEY,'{}')");assert.equal(e('readBookings().length'),0);assert.equal(e('readSaved().length'),0);
+ const content=JSON.parse(fs.readFileSync(root+'lbnb-content-v0.json'));const ids=new Set(content.objects.map(o=>o.id));
+ for(const o of content.objects)for(const c of o.connections||[])assert.ok(ids.has(c.object_id));
+ console.log('PASS: range calendar selection, dates undecided, Stay validation/save/edit/remove, destination/date/status anchors, fullscreen navigation + retained carousel, stable feed order, malformed storage, all content graph links.');
+ dom.window.close();
+})().catch(e=>{console.error(e);process.exit(1)});

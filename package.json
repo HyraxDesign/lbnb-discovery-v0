@@ -1,0 +1,14 @@
+{
+  "name": "nava-discovery-pilot",
+  "version": "1.6.0",
+  "private": true,
+  "scripts": {
+    "test": "node tests/dom-operational.cjs",
+    "test:browser": "node tests/operational.cjs",
+    "serve": "python -m http.server 8765 --directory lbnb-v0-live-07/site"
+  },
+  "devDependencies": {
+    "jsdom": "26.1.0",
+    "playwright": "1.58.2"
+  }
+}
