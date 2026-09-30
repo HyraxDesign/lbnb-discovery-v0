@@ -30,12 +30,14 @@ const assert=require('node:assert/strict');
  }
  await page.evaluate(()=>{writePlan({planned:true,start_date:'2026-10-02',end_date:'2026-10-06'});openJourney('itinerary')});
  assert.deepEqual(await page.locator('.journeyDayModule').evaluateAll(xs=>xs.map(x=>x.dataset.journeyDate)),['2026-10-02','2026-10-03','2026-10-04','2026-10-05','2026-10-06']);
+ assert.match(await page.locator('.journeyHero small').innerText(),/5 days/i);
  await page.screenshot({path:'/tmp/nava-v161-itinerary.png'});
  await page.evaluate(()=>{openMy('journeys');journeyMyMode='calendar';renderMy()});
  assert.equal(await page.locator('#journeyView').isVisible(),false,'calendar navigation closes the Journey overlay');
  assert.equal(await page.locator('#myView').isVisible(),true);
  assert.equal(await page.locator('.calDay.journeyDay').count(),5);
  assert.equal(await page.locator('.calEvent.journeyEvent').count(),5);
+ assert.deepEqual(await page.locator('.calEvent.journeyEvent').allTextContents(),['Day 1','Day 2','Day 3','Day 4','Day 5']);
  await page.screenshot({path:'/tmp/nava-v161-calendar.png'});
  await page.evaluate(()=>{$('myView').hidden=true;openJourney('edit')});
  await page.evaluate(()=>openDatePicker());

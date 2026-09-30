@@ -29,6 +29,10 @@ jobs:
       - run: pip install Pillow==12.3.0
       - name: Download and verify original photos
         run: python scripts/recover-drive-media.py
+      - name: Include the latest development fixes before validation
+        run: |
+          git fetch origin development/nava-v1.6-operational
+          git rebase origin/development/nava-v1.6-operational
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
