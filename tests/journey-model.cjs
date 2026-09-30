@@ -15,9 +15,11 @@ first.mode='fixed';assert.throws(()=>M.move(s,a.journeyId,first.journeyItemId,1)
 M.move(s,a.journeyId,first.journeyItemId,1,null,{deliberate:true});assert.equal(first.dayIndex,1);
 assert.throws(()=>M.setDates(s,a.journeyId,'2026-02-30','2026-03-02'),/valid/);
 assert.throws(()=>M.setDates(s,a.journeyId,'2026-10-10','2026-10-02'),/valid/);
+M.setDates(s,a.journeyId,'','');M.setDates(s,a.journeyId,'2026-10-02','2026-10-06');assert.equal(first.dayIndex,1,'undating and re-dating retain edited allocation');
 M.setDates(s,b.journeyId,'2026-11-01','2026-11-03');assert.equal(a.startDate,'2026-10-02');
 const event={bookingId:'bk',listingId:'b',destination:'Lisbon',kind:'experience',start:'2026-10-03',end:'2026-10-03',startTime:'20:30',status:'planned'};
 s.bookings.push(event);const bi=M.attachBooking(s,'bk',a.journeyId);
+assert.equal(a.items.filter(i=>i.sourceId==='b').length,1,'booking upgrades the existing stop without duplicating it');
 M.attachBooking(s,'bk',a.journeyId);assert.equal(a.items.filter(i=>i.bookingId==='bk').length,1);
 assert.equal(event.journeyItemId,bi.journeyItemId);
 assert.throws(()=>M.attachBooking(s,'bk',b.journeyId),/Detach/);

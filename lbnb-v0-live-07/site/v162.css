@@ -85,3 +85,5 @@
 .formRow label{font-size:12px}
 button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #8b7b5e;outline-offset:3px}
 @media(prefers-reduced-motion:reduce){.loadDots162{animation:none}}
+
+.buildSaved162{font:600 11px Arial,sans-serif;margin-right:5px}.suggestionActions162 button{font:600 11px Arial,sans-serif}.formRow input[type=checkbox]{accent-color:#171717}

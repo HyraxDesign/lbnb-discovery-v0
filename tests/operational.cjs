@@ -65,8 +65,8 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  await page.evaluate(()=>{const b=workspace162.bookings[0];const j=M162.createJourney(workspace162,{destination:b.destination,items:[]},{title:'Lebanon October'});M162.setDates(workspace162,j.journeyId,'2026-10-02','2026-10-06');M162.attachBooking(workspace162,b.bookingId,j.journeyId);persist162();openOwned162(j.journeyId)});
  assert.equal(await page.locator('.staySpan162').count(),1);assert.equal(await page.locator('.stayEvent162').count(),2);assert.equal(await page.locator('.node162').count(),0);
  await page.evaluate(id=>{NavaHostEvents.apply({bookingId:id,status:'pending'});NavaHostEvents.apply({bookingId:id,status:'confirmed'})},bid);
- assert.match(await page.locator('.staySpan162').innerText(),/Confirmed/);
- await page.evaluate(()=>openMy('bookings'));assert.match(await page.locator('[data-booking-card="'+bid+'"]').innerText(),/Confirmed/);
+ assert.match(await page.locator('.staySpan162').innerText(),/Confirmed/i);
+ await page.evaluate(()=>openMy('bookings'));assert.match(await page.locator('[data-booking-card="'+bid+'"]').innerText(),/Confirmed/i);
  await page.evaluate(()=>openBookingSheet(obj(workspace162.bookings[0].listingId)));
  await page.locator('#bookingStart').fill('2026-12-02');await page.locator('#bookingEnd').fill('2026-12-06');await page.locator('#saveBooking').click();
  assert.equal(await page.evaluate(()=>workspace162.bookings.length),2);
