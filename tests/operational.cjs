@@ -32,6 +32,8 @@ const assert=require('node:assert/strict');
  assert.deepEqual(await page.locator('.journeyDayModule').evaluateAll(xs=>xs.map(x=>x.dataset.journeyDate)),['2026-10-02','2026-10-03','2026-10-04','2026-10-05','2026-10-06']);
  await page.screenshot({path:'/tmp/nava-v161-itinerary.png'});
  await page.evaluate(()=>{openMy('journeys');journeyMyMode='calendar';renderMy()});
+ assert.equal(await page.locator('#journeyView').isVisible(),false,'calendar navigation closes the Journey overlay');
+ assert.equal(await page.locator('#myView').isVisible(),true);
  assert.equal(await page.locator('.calDay.journeyDay').count(),5);
  assert.equal(await page.locator('.calEvent.journeyEvent').count(),5);
  await page.screenshot({path:'/tmp/nava-v161-calendar.png'});
