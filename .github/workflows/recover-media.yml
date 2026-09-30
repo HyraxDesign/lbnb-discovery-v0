@@ -42,7 +42,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: nava-v161-browser-proof
+          name: nava-v161-browser-proof-${{ github.run_attempt }}
           path: /tmp/nava-*.png
       - name: Commit recovered images to the development branch
         run: |
