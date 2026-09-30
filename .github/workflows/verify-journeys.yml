@@ -1,0 +1,35 @@
+name: Verify NAVA Journey architecture
+on:
+  push:
+    branches: [development/nava-v1.6.2-journeys]
+  pull_request:
+    branches: [main]
+permissions:
+  contents: read
+concurrency:
+  group: nava-journeys-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: npm install --no-audit --no-fund
+      - run: npm test
+      - run: npx playwright install --with-deps chromium webkit
+      - name: Verify mobile Chromium and WebKit
+        run: |
+          python -m http.server 8765 --directory lbnb-v0-live-07/site > /tmp/nava-server.log 2>&1 &
+          NAVA_BROWSER=chromium npm run test:browser
+          NAVA_BROWSER=webkit npm run test:browser
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: nava-v162-mobile-proof
+          path: |
+            /tmp/nava-*.png
+            /tmp/nava-*-report.json

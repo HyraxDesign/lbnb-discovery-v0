@@ -1,0 +1,87 @@
+/* Preserve the existing card design; remove inline and fractional image seams. */
+.stayCard{padding:0;overflow:hidden;line-height:normal}
+.stayVisual{position:relative;display:block;overflow:hidden;line-height:0;margin:0;border-radius:17px 17px 0 0}
+.stayVisual img{position:absolute;inset:0;width:100%;height:100%;min-width:100%;min-height:100%;display:block;object-fit:cover;border-radius:inherit;margin:0;border:0;transform:none}
+.savedShell162{position:relative;overflow:hidden;padding:0;background:#fff}
+.savedOpen162{border:0;padding:0;background:transparent;text-align:left;width:100%;display:block;color:#151515}
+.savedShell162 .remove{position:absolute;right:8px;top:8px;width:35px;height:35px;min-width:35px;display:grid;place-items:center;padding:0;border:0;border-radius:50%;background:rgba(20,20,20,.72);color:white;line-height:0;z-index:2}
+.savedShell162 .remove svg{display:block;margin:0;flex:none}
+.selectSaved162{position:absolute;bottom:10px;right:10px}
+.selectSaved162 input{width:18px;height:18px;accent-color:#171717}
+.buildSaved162{margin-top:12px;padding:9px 14px;border:1px solid #d8d2c8;border-radius:24px;background:white}
+.exploreSentinel162{grid-column:1/-1;display:grid;place-items:center;min-height:46px;margin-top:8px}
+.exploreSentinel162 button{font-size:12px;padding:8px 18px;background:transparent;border:1px solid #d8d2c8;border-radius:24px;color:#6c675e}
+.loadDots162{letter-spacing:4px;color:#8c857a;font-size:13px;animation:navaPulse162 1s ease-in-out infinite}
+@keyframes navaPulse162{50%{opacity:.3}}
+.listHeading162{margin:26px 2px 12px;font-size:18px}
+.suggestionCard162{background:#eeeae1;border-style:dashed}
+.suggestionCard162 small,.ownedCard162 small{display:block;color:#7d776a;font-size:9px;letter-spacing:1px}
+.suggestionActions162{display:grid;gap:6px}
+.suggestionActions162 button{font-size:11px;white-space:nowrap}
+.journeyModeTabs{grid-template-columns:repeat(4,1fr)}
+.journeyModeTabs button{padding-left:4px;padding-right:4px;font-size:12px;min-width:0}
+.timelineTools162{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0}
+.tripSpine162{position:relative;padding-left:16px}
+.tripSpine162:before{content:"";position:absolute;left:21px;top:24px;bottom:16px;width:1px;background:#ccc5b8}
+.day162{position:relative;margin-bottom:16px}
+.dayNode162{display:grid;grid-template-columns:1fr auto;width:100%;text-align:left;background:transparent;border:0;padding:16px 14px 16px 24px;position:relative;color:#191919;gap:4px}
+.dayNode162 small{grid-column:1/-1;font-size:10px;letter-spacing:1.5px;color:#887a60}
+.dayNode162 strong{font-size:17px}
+.majorDot162{position:absolute;width:11px;height:11px;background:#191919;border:3px solid #f5f3ee;box-sizing:content-box;border-radius:50%;left:-3px;top:34px}
+.zoomHint162{font-size:10px;align-self:center;color:#837a6a}
+.node162{position:relative;display:grid;grid-template-columns:1fr auto;gap:5px;margin:0 0 8px 24px;min-width:0}
+.time162{grid-column:1/-1;font-size:10px;letter-spacing:.3px;color:#797267;margin:0 0 0 2px}
+.minorDot162{position:absolute;left:-23px;top:44px;width:6px;height:6px;background:#aca28f;border:2px solid #f5f3ee;border-radius:50%}
+.stopCard162{display:flex;text-align:left;border:0;background:white;border-radius:16px;overflow:hidden;padding:0;color:#151515;min-width:0;width:100%;box-shadow:0 4px 16px rgba(0,0,0,.035)}
+.stopVisual162{width:72px;min-width:72px;min-height:92px;align-self:stretch;position:relative;overflow:hidden}
+.stopVisual162 img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover;display:block}
+.stopCopy162{padding:12px;display:grid;gap:5px;align-content:center;min-width:0}
+.stopCopy162 small{font-size:9px;letter-spacing:1px;color:#81796e}
+.stopCopy162 strong{font-size:14px;font-weight:650}
+.stopCopy162>span{font-size:11px;line-height:1.4;color:#83796a}
+.context162 .stopCard162{background:#eeebe3;border-left:2px solid #d6cdbd}
+.context162 .stopCopy162{padding:12px}
+.context162 .minorDot162{background:transparent}
+.itemControls162{display:grid;grid-template-rows:1fr 32px;gap:3px;width:34px}
+.itemControls162 button{border:0;border-radius:12px;background:#e9e4d9;color:#292723;padding:0;font-size:12px}
+.handle162{touch-action:none;user-select:none;font-size:18px!important}
+.handle162:disabled{opacity:.35}
+.status162{font-size:10px!important;border-radius:8px;padding:3px 6px;background:#ebe5d8;color:#6c624f}
+.status162.confirmed{background:#e0e8dc;color:#40543d}
+.status162.pending{background:#ece4d3;color:#786844}
+.staySpans162{display:grid;gap:10px;margin:14px 0}
+.staySpan162{display:grid;text-align:left;border:1px solid #d7cebb;background:#ece7dd;border-radius:16px;padding:15px;gap:5px;color:#222}
+.staySpan162 small{font-size:9px;letter-spacing:1px}
+.staySpan162 strong{font-size:14px}
+.staySpan162>span{font-size:11px;color:#766b58}
+.spanLine162{height:3px;background:#a99c84;border-radius:3px;margin-top:8px}
+.stayEnds162{display:flex;justify-content:space-between}
+.stayEvent162{font-size:11px;background:#e8e3d8;border:0;border-radius:10px;padding:10px;margin:0 0 10px 24px;text-align:left}
+.dayDrop162{min-height:16px;font-size:10px;color:#a19782;padding:8px 14px 8px 24px}
+.dropTarget162{outline:2px dashed #9a8c70;outline-offset:3px;border-radius:12px}
+.draggingNode{opacity:.5}
+.tripCards162 .day162{border:1px solid #e6e0d5;border-radius:18px;overflow:hidden;background:white}
+.tripCards162 .dayNode162{padding:14px 16px;background:#f0ece4}
+.tripCards162 .majorDot162,.tripCards162 .minorDot162{display:none}
+.tripCards162 .node162{margin:10px 12px}
+.tripCards162 .stopCard162{background:#f7f5f0;box-shadow:none}
+.tripCards162 .dayDrop162{display:none}
+.tripCards162 .time162{margin-left:10px}
+.calEvent{border:0;text-align:left;width:100%;display:block;padding:3px 2px;overflow:hidden;font-size:8px;color:#625946;border-radius:4px;margin:2px 0;overflow-wrap:anywhere}
+.calEvent.journeyEvent{background:#dcd3c0}
+.calendarHead button{border:0;border-radius:20px;background:#e8e2d6;padding:6px 12px}
+.calDay{min-width:0;min-height:72px}
+.mapList162{display:grid;gap:14px;margin-top:14px}
+.mapList162 section{padding:14px;background:white;border:1px solid #e8e0d4;border-radius:16px}
+.mapList162 h3{font-size:14px;margin:0 0 10px}
+.mapList162 button{display:block;background:transparent;border:0;text-align:left;padding:7px 0;color:#171717;font-size:13px}
+.outside162{background:#ede7dd;padding:12px;border-radius:14px}
+.outside162>p{font-size:12px}
+.bookingVisits162{display:grid;gap:7px}
+.bookingVisits162 button{background:white;border:1px solid #d8cebc;border-radius:12px;padding:9px;text-align:left;font-size:11px}
+.gapChoice162{display:block;padding:10px;font-size:13px}
+#dateError162,#bookingError162{color:#8b3029;font-size:12px}
+.formRow select,.formRow input[type=text]{width:100%;padding:12px;border:1px solid #d9d0c1;border-radius:10px;background:white;margin:6px 0 12px;font:inherit}
+.formRow label{font-size:12px}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid #8b7b5e;outline-offset:3px}
+@media(prefers-reduced-motion:reduce){.loadDots162{animation:none}}
