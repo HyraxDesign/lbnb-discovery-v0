@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta name="nava-version" content="1.6.1">
+<meta name="nava-version" content="1.6.2">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>NAVA · V1.6.1</title>
+<title>NAVA · V1.6.2</title>
 <meta name="theme-color" content="#111111">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -99,6 +99,7 @@
 .node{grid-template-columns:59px minmax(0,1fr) 42px;align-items:stretch}.nodeCard:after{content:none!important}.nodeHandle{width:42px;min-height:76px;border:0;border-radius:12px;background:#e8e3da;color:#322e29;font-size:19px;letter-spacing:-4px;touch-action:none;cursor:grab;user-select:none;-webkit-user-select:none}.nodeHandle:active{cursor:grabbing;background:#d6cebf}.node.locked .nodeHandle{visibility:hidden}.node.draggingNode{opacity:.76;z-index:3}.node.draggingNode .nodeHandle{background:#c9bdab}.journeyDragHint{margin-left:69px}.stayFacts{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0}.stayFacts span{font-size:10px;background:#eeeae3;border-radius:9px;padding:7px 9px}.stayUnits{display:grid;gap:8px;margin-top:12px}.stayUnits button{border:1px solid #d8d2c8;background:#fff;text-align:left;padding:12px;border-radius:12px}.stayUnits strong,.stayUnits small{display:block}.stayUnits small{color:#777;margin-top:4px}.guestRow{display:grid;grid-template-columns:1fr 1fr;gap:8px}.guestRow input{width:100%}
 
 </style>
+<link rel="stylesheet" href="./v162.css?v=162">
 </head>
 <body>
 <div id="app">
@@ -150,7 +151,7 @@ function toggleSaved(id){let s=readSaved(), on=s.includes(id);s=on?s.filter(x=>x
 function updateSavedCardStates(){document.querySelectorAll('[data-object]').forEach(el=>el.classList.toggle('saved',isSaved(el.dataset.object)))}
 function obj(id){return objects[id]}
 
-async function loadContent(){let loaded=null;try{const r=await fetch('./lbnb-content-v0.json?v=161',{cache:'reload'});if(r.ok)loaded=await r.json()}catch(e){}if(!valid(loaded)){try{loaded=JSON.parse(localStorage.getItem(CONTENT_KEY)||'null')}catch(e){}}if(!valid(loaded)){document.querySelector('#loader div').innerHTML='<b>Could not load content.</b><small>Open the hosted build or check the JSON file.</small>';return}data=loaded;objects=Object.fromEntries(data.objects.map(o=>[o.id,o]));localStorage.setItem(CONTENT_KEY,JSON.stringify(data));writeSaved(readSaved());renderFeed();$('loader').hidden=true;openDeepLink()}
+async function loadContent(){let loaded=null;try{const r=await fetch('./lbnb-content-v0.json?v=162',{cache:'reload'});if(r.ok)loaded=await r.json()}catch(e){}if(!valid(loaded)){try{loaded=JSON.parse(localStorage.getItem(CONTENT_KEY)||'null')}catch(e){}}if(!valid(loaded)){document.querySelector('#loader div').innerHTML='<b>Could not load content.</b><small>Open the hosted build or check the JSON file.</small>';return}data=loaded;objects=Object.fromEntries(data.objects.map(o=>[o.id,o]));localStorage.setItem(CONTENT_KEY,JSON.stringify(data));writeSaved(readSaved());renderFeed();$('loader').hidden=true;openDeepLink()}
 
 function reelItems(r){return (r.objects||[]).map(x=>({...x,o:obj(x.object_id)})).filter(x=>x.o)}
 function cardHTML(o,role='related'){return `<button class="card ${isSaved(o.id)?'saved':''}" data-object="${esc(o.id)}"><div class="cardVisual">${o.image?`<img src="${esc(o.image)}" alt="" loading="lazy" referrerpolicy="no-referrer">`:''}</div><div class="cardCopy"><small>${esc(displayType(o))}${role==='direct'?' · in reel':''}</small><strong>${esc(o.title)}</strong><span>${esc(o.area||o.destination||'')}</span></div></button>`}
@@ -284,8 +285,10 @@ $('backdrop').onclick=closeSheet;$('exploreBtn').onclick=openExplore;$('exploreB
 if('serviceWorker' in navigator&&location.protocol!=='file:')window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
 loadContent();
 </script>
-<script src="./v151-media.js?v=161"></script>
-<script src="./v16.js?v=161"></script>
-<script src="./v161.js?v=161"></script>
+<script src="./v151-media.js?v=162"></script>
+<script src="./v16.js?v=162"></script>
+<script src="./v161.js?v=162"></script>
+<script src="./journey-model.js?v=162"></script>
+<script src="./v162.js?v=162"></script>
 </body>
 </html>
