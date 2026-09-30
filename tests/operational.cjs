@@ -8,6 +8,34 @@ const assert=require('node:assert/strict');
  await page.route('https://**/*',r=>r.abort());
  await page.goto(process.env.NAVA_TEST_URL||'http://127.0.0.1:8765/');
  await page.waitForFunction(()=>typeof data!=='undefined'&&data&&window.NAVA_VERSION==='1.6.1');
+ const card=page.locator('#feed .card').first(),cardId=await card.getAttribute('data-object');
+ await card.click();
+ assert.equal(await page.locator('#sheet').isVisible(),true,'real pointer click opens carousel card');
+ await page.locator('#saveObject').click();
+ assert.equal(await page.evaluate(id=>readSaved().includes(id),cardId),true);
+ await page.evaluate(()=>closeSheet());
+ const recovered=await page.evaluate(()=>data.objects.filter(o=>o.subtype==='stay'&&o.image?.startsWith('./media/listings/')).map(o=>o.id));
+ assert.ok(recovered.length>=70);
+ for(const id of [recovered[0],recovered[Math.floor(recovered.length/2)],recovered.at(-1)]){
+  await page.evaluate(id=>openObject(obj(id)),id);
+  await page.waitForFunction(()=>{const im=document.querySelector('.sheetHero img');return im?.complete&&im.naturalWidth>0});
+  await page.screenshot({path:`/tmp/nava-media-${id}.png`});
+  await page.locator('.sheetHero').click({position:{x:100,y:150}});
+  await page.waitForFunction(()=>{const im=document.getElementById('mediaViewerImg');return !im.hidden&&im.complete&&im.naturalWidth>0});
+  if(await page.locator('#mediaViewerNext').isVisible()){
+   await page.locator('#mediaViewerNext').click();
+   await page.waitForFunction(()=>{const im=document.getElementById('mediaViewerImg');return im.complete&&im.naturalWidth>0});
+  }
+  await page.evaluate(()=>{closeMediaViewer();closeSheet()});
+ }
+ await page.evaluate(()=>{writePlan({planned:true,start_date:'2026-10-02',end_date:'2026-10-06'});openJourney('itinerary')});
+ assert.deepEqual(await page.locator('.journeyDayModule').evaluateAll(xs=>xs.map(x=>x.dataset.journeyDate)),['2026-10-02','2026-10-03','2026-10-04','2026-10-05','2026-10-06']);
+ await page.screenshot({path:'/tmp/nava-v161-itinerary.png'});
+ await page.evaluate(()=>{openMy('journeys');journeyMyMode='calendar';renderMy()});
+ assert.equal(await page.locator('.calDay.journeyDay').count(),5);
+ assert.equal(await page.locator('.calEvent.journeyEvent').count(),5);
+ await page.screenshot({path:'/tmp/nava-v161-calendar.png'});
+ await page.evaluate(()=>{$('myView').hidden=true;openJourney('edit')});
  await page.evaluate(()=>openDatePicker());
  assert.equal(await page.locator('.rangePicker').count(),1);
  await page.evaluate(()=>{writePlan({planned:true,start_date:'',end_date:''});openJourney('edit')});
@@ -41,6 +69,6 @@ const assert=require('node:assert/strict');
  await page.evaluate(()=>openDatePicker());
  await page.screenshot({path:'/tmp/nava-v16-calendar.png'});
  assert.deepEqual(errors,[]);
- console.log('PASS: mobile range calendar, dates undecided, stay validation, personal-plan status, destination anchors, fullscreen navigation/carousel, persistence, malformed storage, no runtime errors.');
+ console.log(`PASS: real carousel click and Save; ${recovered.length} stays map to recovered media; three representative photos and gallery images load with natural dimensions; Oct 2–6 itinerary and calendar; mobile range calendar, stay validation, fullscreen, persistence, no runtime errors.`);
  await browser.close();
 })().catch(e=>{console.error(e);process.exit(1)});

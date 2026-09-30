@@ -7,10 +7,26 @@ const root='lbnb-v0-live-07/site/';
  w.fetch=async url=>({ok:true,json:async()=>JSON.parse(fs.readFileSync(root+'lbnb-content-v0.json','utf8'))});
  w.HTMLElement.prototype.scrollIntoView=function(){};
  w.HTMLElement.prototype.scrollTo=function(){};
+ w.HTMLMediaElement.prototype.play=function(){return Promise.resolve()};w.HTMLMediaElement.prototype.pause=function(){};w.HTMLMediaElement.prototype.load=function(){};
  const inline=fs.readFileSync(root+'index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
  for(const source of [inline,fs.readFileSync(root+'v151-media.js','utf8'),fs.readFileSync(root+'v16.js','utf8'),fs.readFileSync(root+'v161.js','utf8')]){const script=w.document.createElement('script');script.textContent=source;w.document.body.append(script)}
  await new Promise(r=>setTimeout(r,200));
  const e=s=>w.eval(s),click=id=>w.document.getElementById(id).click();
+ // A normal mouse press on a carousel card must not capture the rail pointer.
+ const firstCard=w.document.querySelector('#feed .card'),firstCardId=firstCard.dataset.object,firstRail=firstCard.closest('.rail');
+ let captured=0;firstRail.setPointerCapture=()=>{captured++};
+ const pointer=(type,x)=>{const ev=new w.Event(type,{bubbles:true,cancelable:true});Object.defineProperties(ev,{pointerType:{value:'mouse'},pointerId:{value:1},clientX:{value:x},button:{value:0}});return ev};
+ firstCard.dispatchEvent(pointer('pointerdown',100));firstCard.dispatchEvent(pointer('pointerup',100));firstCard.click();
+ assert.equal(captured,0,'a card tap/click does not capture the carousel pointer');
+ assert.equal(w.document.getElementById('sheet').hidden,false,'carousel card opens its object sheet');
+ click('saveObject');assert.ok(e(`readSaved().includes(${JSON.stringify(firstCardId)})`),'object sheet Save persists the selected card');
+ e('closeSheet()');
+ const recovered=e("data.objects.filter(o=>o.subtype==='stay'&&o.image?.startsWith('./media/listings/'))");
+ assert.ok(recovered.length>=70,'recovered listing photos are preferred over dead S3 links');
+ assert.ok(fs.existsSync(root+recovered[0].image.slice(2)),'recovered listing photo exists in the build');
+ const galleryStay=e("data.objects.find(o=>o.subtype==='stay'&&o.image?.startsWith('./media/listings/')&&o.media?.some(u=>u.startsWith('./media/listings/')))");
+ if(galleryStay){e(`openObject(obj(${JSON.stringify(galleryStay.id)}))`);assert.ok(w.document.querySelector('.sheetHero img').getAttribute('src').startsWith('./media/listings/'));w.document.querySelector('.sheetHero').click();assert.equal(w.document.getElementById('mediaViewer').hidden,false);assert.equal(w.document.getElementById('mediaViewerNext').hidden,false,'listing photo viewer exposes the recovered gallery');click('mediaViewerNext');assert.ok(w.document.getElementById('mediaViewerImg').getAttribute('src').startsWith('./media/listings/'));e('closeMediaViewer();closeSheet()')}
+ assert.match(e("reelMediaFrame({video:'sample.webm',media_type:'video/webm'},'',0,null)"),/<video[^>]+autoplay[^>]+playsinline/,'reel media renders inline videos when video files are supplied');
  e('openDatePicker()');assert.equal(w.document.querySelectorAll('.rangePicker').length,1);
  const day=w.document.querySelector('.rangeGrid [data-date]:not([disabled])');day.click();
  assert.equal(e("$('journeyStartInput').value"),day.dataset.date);
@@ -51,6 +67,6 @@ const root='lbnb-v0-live-07/site/';
  assert.equal(w.document.querySelectorAll('.calDay.journeyDay').length,5);
  const content=JSON.parse(fs.readFileSync(root+'lbnb-content-v0.json'));const ids=new Set(content.objects.map(o=>o.id));
  for(const o of content.objects)for(const c of o.connections||[])assert.ok(ids.has(c.object_id));
- console.log('PASS: range calendar selection, dates undecided, Stay validation/save/edit/remove, destination/date/status anchors, fullscreen navigation + retained carousel, stable feed order, malformed storage, all content graph links and multi-day modules/calendar.');
+ console.log(`PASS: carousel card opens and saves; ${recovered.length} stays use recovered Drive photos; gallery navigation and video markup; Journey date range, day modules, calendar markers; Stay booking state; anchors; fullscreen; storage; content graph.`);
  dom.window.close();
 })().catch(e=>{console.error(e);process.exit(1)});
