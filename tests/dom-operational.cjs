@@ -8,7 +8,7 @@ const root='lbnb-v0-live-07/site/';
  w.HTMLElement.prototype.scrollIntoView=function(){};
  w.HTMLElement.prototype.scrollTo=function(){};
  const inline=fs.readFileSync(root+'index.html','utf8').match(/<script>([\s\S]*?)<\/script>/)[1];
- for(const source of [inline,fs.readFileSync(root+'v151-media.js','utf8'),fs.readFileSync(root+'v16.js','utf8')]){const script=w.document.createElement('script');script.textContent=source;w.document.body.append(script)}
+ for(const source of [inline,fs.readFileSync(root+'v151-media.js','utf8'),fs.readFileSync(root+'v16.js','utf8'),fs.readFileSync(root+'v161.js','utf8')]){const script=w.document.createElement('script');script.textContent=source;w.document.body.append(script)}
  await new Promise(r=>setTimeout(r,200));
  const e=s=>w.eval(s),click=id=>w.document.getElementById(id).click();
  e('openDatePicker()');assert.equal(w.document.querySelectorAll('.rangePicker').length,1);
@@ -39,8 +39,18 @@ const root='lbnb-v0-live-07/site/';
  assert.ok(w.document.querySelector('#reelFullscreenContent .rail'));
  const order=e('JSON.stringify(orderedReels().map(r=>r.id))');assert.equal(e('JSON.stringify(orderedReels().map(r=>r.id))'),order);
  e("localStorage.setItem(BOOKINGS_KEY,'{}');localStorage.setItem(SAVED_KEY,'{}')");assert.equal(e('readBookings().length'),0);assert.equal(e('readSaved().length'),0);
+ e("writePlan({planned:true,start_date:'2026-10-02',end_date:'2026-10-06'});openJourney('itinerary')");
+ const modules=[...w.document.querySelectorAll('.journeyDayModule')];
+ assert.equal(modules.length,5,'Oct 2 through Oct 6 has five inclusive Journey day modules');
+ assert.deepEqual(modules.map(x=>x.dataset.journeyDate),['2026-10-02','2026-10-03','2026-10-04','2026-10-05','2026-10-06']);
+ assert.equal(modules.flatMap(x=>[...x.querySelectorAll('.dayStop:not(.context)')]).length,4,'all four primary stops assigned once');
+ assert.equal(modules.flatMap(x=>[...x.querySelectorAll('.dayStop.context')]).length,3,'context follows its primary stop');
+ assert.ok(modules.every(x=>x.querySelector('header').textContent.includes('DAY')));
+ e("openMy('journeys');journeyMyMode='calendar';renderMy()");
+ assert.equal(w.document.querySelectorAll('.calEvent.journeyEvent').length,5,'calendar marks every date in the Journey range');
+ assert.equal(w.document.querySelectorAll('.calDay.journeyDay').length,5);
  const content=JSON.parse(fs.readFileSync(root+'lbnb-content-v0.json'));const ids=new Set(content.objects.map(o=>o.id));
  for(const o of content.objects)for(const c of o.connections||[])assert.ok(ids.has(c.object_id));
- console.log('PASS: range calendar selection, dates undecided, Stay validation/save/edit/remove, destination/date/status anchors, fullscreen navigation + retained carousel, stable feed order, malformed storage, all content graph links.');
+ console.log('PASS: range calendar selection, dates undecided, Stay validation/save/edit/remove, destination/date/status anchors, fullscreen navigation + retained carousel, stable feed order, malformed storage, all content graph links and multi-day modules/calendar.');
  dom.window.close();
 })().catch(e=>{console.error(e);process.exit(1)});

@@ -7,7 +7,7 @@ const assert=require('node:assert/strict');
  page.on('pageerror',e=>errors.push(e.message));
  await page.route('https://**/*',r=>r.abort());
  await page.goto(process.env.NAVA_TEST_URL||'http://127.0.0.1:8765/');
- await page.waitForFunction(()=>typeof data!=='undefined'&&data&&window.NAVA_VERSION==='1.6.0');
+ await page.waitForFunction(()=>typeof data!=='undefined'&&data&&window.NAVA_VERSION==='1.6.1');
  await page.evaluate(()=>openDatePicker());
  assert.equal(await page.locator('.rangePicker').count(),1);
  await page.evaluate(()=>{writePlan({planned:true,start_date:'',end_date:''});openJourney('edit')});
