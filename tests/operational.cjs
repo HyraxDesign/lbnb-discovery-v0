@@ -20,7 +20,7 @@ const assert=require('node:assert/strict');
   await page.evaluate(id=>openObject(obj(id)),id);
   await page.waitForFunction(()=>{const im=document.querySelector('.sheetHero img');return im?.complete&&im.naturalWidth>0});
   await page.screenshot({path:`/tmp/nava-media-${id}.png`});
-  await page.locator('.sheetHero').click({position:{x:100,y:150}});
+  await page.locator('.sheetHero').click({position:{x:100,y:80}});
   await page.waitForFunction(()=>{const im=document.getElementById('mediaViewerImg');return !im.hidden&&im.complete&&im.naturalWidth>0});
   if(await page.locator('#mediaViewerNext').isVisible()){
    await page.locator('#mediaViewerNext').click();
