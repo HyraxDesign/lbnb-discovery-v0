@@ -1,4 +1,4 @@
-const CACHE='nava-v162';
+const CACHE='nava-v162-feedback1';
 const CORE=['./','./index.html','./lbnb-content-v0.json','./manifest.webmanifest','./v151-media.js','./v16.js','./v161.js','./journey-model.js','./v162.js','./v162.css','./icons/icon-192.png','./icons/icon-512.png'];
 self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(CORE)).then(()=>self.skipWaiting())));
 self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k.startsWith('nava-')&&k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));

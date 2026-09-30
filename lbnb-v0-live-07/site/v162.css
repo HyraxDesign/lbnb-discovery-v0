@@ -94,3 +94,15 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 .calendarGrid .calEvent{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal;font-size:8px;line-height:1.25}
 .tripCards162 .journeyDayModule>header{display:block;padding:0;gap:0}
 .timelineTools162 .planBadge{border:0}
+
+/* Guest counts are button controls: no keyboard, caret or input zoom. */
+.guestRow{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.guestChoice162>span{display:block;font-size:12px;margin:8px 0}
+.guestStepper162{display:grid;grid-template-columns:44px minmax(24px,1fr) 44px;align-items:center;gap:3px;padding:5px;border:1px solid #d9d0c1;border-radius:16px;background:#fff}
+#actionSheet .guestStepper162 button{display:grid;place-items:center;width:44px;height:44px;padding:0;margin:0;border:0;border-radius:50%;background:#eeeae2;color:#171717;touch-action:manipulation}
+#actionSheet .guestStepper162 button:disabled{opacity:.32}
+.guestStepper162 svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}
+.guestStepper162 output{text-align:center;font-size:18px;font-weight:600;min-width:0}
+.suggestionDestination162{font-size:12px;display:grid;gap:4px}
+.suggestionDestination162 select{font:16px Arial,sans-serif;border:1px solid #d9d0c1;border-radius:12px;padding:8px;background:#fff;max-width:180px}
+#actionSheet input,#actionSheet select{font-size:16px;min-width:0;max-width:100%;box-sizing:border-box}

@@ -59,6 +59,14 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  await page.evaluate(id=>openOwned162(id),first);assert.equal(await page.evaluate(()=>owned162().startDate),'2026-10-02');
  assert.equal(await page.evaluate(()=>JSON.stringify(data.journeys)),original);
  await page.evaluate(()=>{openMy('bookings');openBookingSheet(data.objects.find(o=>o.subtype==='stay'))});
+ assert.equal(await page.locator('#bookingAdults').evaluate(el=>el.tagName),'OUTPUT');
+ await page.locator('[data-guest="bookingAdults"][data-step="1"]').click();
+ assert.equal(await page.locator('#bookingAdults').innerText(),'2');
+ await page.locator('[data-guest="bookingAdults"][data-step="-1"]').click();
+ assert.equal(await page.locator('#bookingAdults').innerText(),'1');
+ const guests=await page.locator('.guestStepper162').first().boundingBox();assert.ok(guests.width>130&&guests.width<190);
+ assert.equal(await page.locator('.guestStepper162 input').count(),0);
+ await page.screenshot({path:'/tmp/nava-'+engine+'-guests.png'});
  await page.locator('#bookingStart').fill('2026-10-02');await page.locator('#bookingEnd').fill('2026-10-06');await page.locator('#saveBooking').click();
  const bid=await page.evaluate(()=>workspace162.bookings[0].bookingId);
  assert.equal(await page.evaluate(()=>workspace162.bookings[0].journeyId),null);
