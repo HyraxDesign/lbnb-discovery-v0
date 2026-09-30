@@ -30,7 +30,7 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  assert.equal(centre.width,35);assert.equal(centre.height,35);assert.ok(centre.x<.1&&centre.y<.1);
  await page.screenshot({path:'/tmp/nava-'+engine+'-saved.png'});
  const original=await page.evaluate(()=>JSON.stringify(data.journeys));
- await page.evaluate(()=>openMy('journeys'));await page.locator('[data-use-suggestion]').first().click();
+ await page.evaluate(()=>openMy('journeys'));const sourceId=await page.evaluate(()=>source162()[0].suggestionId);await page.locator('[data-use-suggestion="'+sourceId+'"]').click();
  await page.locator('#undated162').click();
  const first=await page.evaluate(()=>owned162().journeyId);
  await page.locator('#journeyDatesBadge').click();await page.locator('#chooseDates162').click();
@@ -39,7 +39,9 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  const iid=await page.evaluate(()=>owned162().items[0].journeyItemId);
  const handle=page.locator('[data-item="'+iid+'"] .handle162');await handle.scrollIntoViewIfNeeded();
  await page.evaluate(()=>{$('journeyView').scrollTop=document.querySelector('[data-day="0"]').offsetTop-120});
+ await page.waitForTimeout(300);
  const h=await handle.boundingBox(),drop=await page.locator('[data-day="1"] .dayNode162').boundingBox();
+ assert.ok(h.y>0&&h.y+h.height<844&&drop.y>0&&drop.y+drop.height<844,'drag source and destination must be on screen');
  await page.mouse.move(h.x+h.width/2,h.y+h.height/2);await page.mouse.down();
  await page.mouse.move(h.x+h.width/2,drop.y+drop.height/2,{steps:16});await page.waitForTimeout(180);await page.mouse.up();
  assert.equal(await page.evaluate(id=>owned162().items.find(i=>i.journeyItemId===id).dayIndex,iid),1,'pointer dragging moves to another day');
@@ -59,6 +61,14 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  await page.evaluate(id=>openOwned162(id),first);assert.equal(await page.evaluate(()=>owned162().startDate),'2026-10-02');
  assert.equal(await page.evaluate(()=>JSON.stringify(data.journeys)),original);
  await page.evaluate(()=>{openMy('bookings');openBookingSheet(data.objects.find(o=>o.subtype==='stay'))});
+ assert.equal(await page.locator('#bookingAdults').evaluate(el=>el.tagName),'OUTPUT');
+ await page.locator('[data-guest="bookingAdults"][data-step="1"]').click();
+ assert.equal(await page.locator('#bookingAdults').innerText(),'2');
+ await page.locator('[data-guest="bookingAdults"][data-step="-1"]').click();
+ assert.equal(await page.locator('#bookingAdults').innerText(),'1');
+ const guests=await page.locator('.guestStepper162').first().boundingBox();assert.ok(guests.width>130&&guests.width<190);
+ assert.equal(await page.locator('.guestStepper162 input').count(),0);
+ await page.screenshot({path:'/tmp/nava-'+engine+'-guests.png'});
  await page.locator('#bookingStart').fill('2026-10-02');await page.locator('#bookingEnd').fill('2026-10-06');await page.locator('#saveBooking').click();
  const bid=await page.evaluate(()=>workspace162.bookings[0].bookingId);
  assert.equal(await page.evaluate(()=>workspace162.bookings[0].journeyId),null);
@@ -72,6 +82,11 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  assert.equal(await page.evaluate(()=>workspace162.bookings.length),2);
  const journeysBefore=await page.evaluate(()=>JSON.stringify(workspace162.journeys));
  await page.evaluate(()=>generateSuggestion162('Lisbon'));assert.equal(await page.evaluate(()=>JSON.stringify(workspace162.journeys)),journeysBefore);
+ await page.evaluate(()=>{const o=data.objects.find(o=>o.destination==='Lebanon'&&o.subtype!=='stay');writeSaved([o.id]);openJourney()});
+ assert.equal(await page.locator('#journeyView .viewHeader h1').innerText(),'Lebanon');
+ assert.equal(await page.locator('#journeyDatesBadge').count(),0);
+ await page.screenshot({path:'/tmp/nava-'+engine+'-suggestion.png'});
+ await page.locator('#refreshSuggestion162').click();assert.equal(await page.evaluate(()=>JSON.stringify(workspace162.journeys)),journeysBefore);
  await page.reload();await page.waitForFunction(()=>typeof workspace162!=='undefined'&&workspace162);
  assert.equal(await page.evaluate(()=>workspace162.journeys.length),3);assert.equal(await page.evaluate(()=>workspace162.bookings.length),2);
  await page.evaluate(()=>{localStorage.removeItem(JOURNEYS_V2_KEY);localStorage.setItem(PLAN_KEY,JSON.stringify({planned:true,start_date:'2026-10-02',end_date:'2026-10-06'}));localStorage.setItem(PLANNED_KEY,'1');localStorage.setItem(BOOKINGS_KEY,'[]')});
