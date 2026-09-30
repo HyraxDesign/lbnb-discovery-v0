@@ -38,7 +38,8 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  assert.equal(await page.locator('.day162').count(),5);await page.locator('#editTimeline162').click();
  const iid=await page.evaluate(()=>owned162().items[0].journeyItemId);
  const handle=page.locator('[data-item="'+iid+'"] .handle162');await handle.scrollIntoViewIfNeeded();
- const h=await handle.boundingBox(),drop=await page.locator('[data-day="1"] .dayDrop162').boundingBox();
+ await page.evaluate(()=>{$('journeyView').scrollTop=document.querySelector('[data-day="0"]').offsetTop-120});
+ const h=await handle.boundingBox(),drop=await page.locator('[data-day="1"] .dayNode162').boundingBox();
  await page.mouse.move(h.x+h.width/2,h.y+h.height/2);await page.mouse.down();
  await page.mouse.move(h.x+h.width/2,drop.y+drop.height/2,{steps:16});await page.waitForTimeout(180);await page.mouse.up();
  assert.equal(await page.evaluate(id=>owned162().items.find(i=>i.journeyItemId===id).dayIndex,iid),1,'pointer dragging moves to another day');
