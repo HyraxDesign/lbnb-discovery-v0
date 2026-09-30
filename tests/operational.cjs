@@ -51,7 +51,7 @@ const {chromium,webkit}=require('playwright'),assert=require('node:assert/strict
  await page.locator('#tripZoom162').click();assert.equal(await page.locator('.day162').count(),5);
  await page.locator('[data-jview="itinerary"]').click();assert.equal(await page.locator('[data-day="2"] [data-item="'+iid+'"]').count(),1);
  await page.screenshot({path:'/tmp/nava-'+engine+'-itinerary.png'});
- await page.locator('[data-jview="calendar"]').click();assert.equal(await page.locator('.journeyEvent').count(),5);
+ await page.locator('[data-jview="calendar"]').click();assert.equal(await page.locator('.journeyEvent').count(),5);assert.ok(await page.locator('.calDay').evaluateAll(xs=>xs.every(x=>x.getBoundingClientRect().height<120)),'calendar rows stay compact');
  await page.screenshot({path:'/tmp/nava-'+engine+'-calendar.png'});
  await page.locator('[data-jview="map"]').click();assert.match(await page.locator('#journeyContent').innerText(),/Day 3/);
  await page.evaluate(()=>openMy('journeys'));await page.locator('[data-use-suggestion]').first().click();await page.locator('#undated162').click();

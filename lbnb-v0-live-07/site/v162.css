@@ -87,3 +87,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @media(prefers-reduced-motion:reduce){.loadDots162{animation:none}}
 
 .buildSaved162{font:600 11px Arial,sans-serif;margin-right:5px}.suggestionActions162 button{font:600 11px Arial,sans-serif}.formRow input[type=checkbox]{accent-color:#171717}
+
+/* Keep calendar rows compact; global empty-state margins must not enter the grid. */
+.calendarGrid .calDay.empty{margin:0;max-width:none;padding:5px;line-height:normal}
+.calendarGrid .calDay{min-height:72px}
+.calendarGrid .calEvent{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;overflow-wrap:normal;font-size:8px;line-height:1.25}
+.tripCards162 .journeyDayModule>header{display:block;padding:0;gap:0}
+.timelineTools162 .planBadge{border:0}
