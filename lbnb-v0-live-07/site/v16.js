@@ -64,3 +64,10 @@ orderedReels=function(){
   const byId=new Map(data.reels.map(r=>[r.id,r]));
   return sessionReelIds.map(id=>byId.get(id)).filter(Boolean);
 };
+
+// Load the current product-layer corrections after all legacy scripts have initialized.
+window.addEventListener('load',()=>{
+  if(document.querySelector('script[data-nava-v163]'))return;
+  const s=document.createElement('script');
+  s.src='./v163.js?v=1.6.3';s.dataset.navaV163='1';document.body.appendChild(s);
+});
