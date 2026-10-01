@@ -25,6 +25,7 @@ CONTENT = SITE / "lbnb-content-v0.json"
 MEDIA_DIR = SITE / "media" / "listings"
 MEDIA_JS = SITE / "v151-media.js"
 REPORT = ROOT / "scripts" / "photo-archive-import-report.json"
+CDN_BASE = "https://lbnb-media.b-cdn.net/listings"
 STEM_RE = re.compile(r"(?i)(?<![a-f0-9])([a-f0-9]{40})(?:\.(?:jpe?g|png|webp))?(?![a-f0-9])")
 RECOVERED_RE = re.compile(r"const RECOVERED_MEDIA=new Set\((\[[^;]*?\])\);", re.S)
 VALID_EXTS = {".jpg", ".jpeg", ".png", ".webp"}
@@ -76,7 +77,14 @@ def update_recovered_set(stems: set[str]) -> int:
     existing = {str(x).lower() for x in json.loads(match.group(1))}
     merged = sorted(existing | stems)
     replacement = "const RECOVERED_MEDIA=new Set(" + json.dumps(merged, separators=(",", ":")) + ");"
-    MEDIA_JS.write_text(text[: match.start()] + replacement + text[match.end() :], encoding="utf-8")
+    text = text[: match.start()] + replacement + text[match.end() :]
+    text = re.sub(
+        r"return RECOVERED_MEDIA\.has\(stem\)\?`(?:\./media/listings|https://lbnb-media\.b-cdn\.net/listings)/\$\{stem\}\.webp`:\'\'",
+        "return RECOVERED_MEDIA.has(stem)?`" + CDN_BASE + "/${stem}.webp`:''",
+        text,
+        count=1,
+    )
+    MEDIA_JS.write_text(text, encoding="utf-8")
     return len(merged)
 
 
