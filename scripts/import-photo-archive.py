@@ -87,6 +87,7 @@ def main() -> int:
     ap.add_argument("--max-dim", type=int, default=1600)
     ap.add_argument("--quality", type=int, default=82)
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--strict", action="store_true", help="Fail if any selected archive image cannot be decoded")
     args = ap.parse_args()
 
     if not args.archive.exists():
@@ -124,18 +125,21 @@ def main() -> int:
 
     report = {
         "archive": str(args.archive),
-        "archive_valid_named_images": len(entries),
+        "archive_named_images": len(entries),
         "content_referenced_stems": len(referenced),
         "matching_archive_images": len(set(entries) & referenced),
         "imported": len(imported),
+        "invalid_count": len(invalid),
         "invalid": invalid,
         "not_selected": len(skipped),
         "recovered_media_count_after": recovered_count,
-        "settings": {"max_dim": args.max_dim, "quality": args.quality, "all": args.all, "dry_run": args.dry_run},
+        "settings": {"max_dim": args.max_dim, "quality": args.quality, "all": args.all, "dry_run": args.dry_run, "strict": args.strict},
     }
     REPORT.write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report, indent=2))
-    return 1 if invalid else 0
+    if not imported:
+        return 2
+    return 1 if args.strict and invalid else 0
 
 
 if __name__ == "__main__":
