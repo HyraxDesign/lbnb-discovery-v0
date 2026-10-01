@@ -1,0 +1,72 @@
+name: Import original LBNB photo archive
+
+on:
+  workflow_dispatch:
+    inputs:
+      archive_url:
+        description: Public or signed HTTPS URL for the original photos ZIP
+        required: true
+        type: string
+      import_all:
+        description: Import every valid 40-character photo in the archive
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+jobs:
+  import:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --disable-pip-version-check pillow
+      - name: Download archive
+        env:
+          ARCHIVE_URL: ${{ inputs.archive_url }}
+        run: |
+          python - <<'PY'
+          import os, urllib.request
+          url=os.environ['ARCHIVE_URL']
+          if not url.lower().startswith('https://'):
+              raise SystemExit('archive_url must use HTTPS')
+          urllib.request.urlretrieve(url, '/tmp/lbnb-photos.zip')
+          PY
+      - name: Import and link exact filename matches
+        run: |
+          if [ "${{ inputs.import_all }}" = "true" ]; then
+            python scripts/import-photo-archive.py /tmp/lbnb-photos.zip --all
+          else
+            python scripts/import-photo-archive.py /tmp/lbnb-photos.zip
+          fi
+      - name: Verify generated WebP files
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image
+          root=Path('lbnb-v0-live-07/site/media/listings')
+          files=list(root.glob('*.webp'))
+          if not files:
+              raise SystemExit('No WebP files found after import')
+          for p in files:
+              with Image.open(p) as im:
+                  im.verify()
+          print(f'PASS: verified {len(files)} local listing photos')
+          PY
+      - name: Commit imported media
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add lbnb-v0-live-07/site/media/listings lbnb-v0-live-07/site/v151-media.js scripts/photo-archive-import-report.json
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "Populate NAVA with original LBNB listing photos"
+          git push origin HEAD:main
