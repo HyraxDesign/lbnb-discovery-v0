@@ -59,7 +59,7 @@ jobs:
                   im.verify()
           print(f'PASS: verified {len(files)} local listing photos')
           PY
-          - name: Upload optimized listing media to Bunny
+      - name: Upload optimized listing media to Bunny
         env:
           BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
           BUNNY_STORAGE_ZONE: lbnb-media
