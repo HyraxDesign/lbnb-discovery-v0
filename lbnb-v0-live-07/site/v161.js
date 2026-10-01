@@ -56,3 +56,23 @@ const style=document.createElement('style');style.textContent=`.multiDayItinerar
 
 const priorJourneyRender161=renderJourney;
 renderJourney=function(){priorJourneyRender161();const plan=readPlan(),dates=plan?.planned?journeyDateList(plan.start_date,plan.end_date):[];if(dates.length){const heading=document.querySelector('#journeyContent .journeyHero small');if(heading)heading.textContent=`${data.journeys[0].destination} · ${dates.length} ${dates.length===1?'day':'days'}`}};
+
+/* V1.6.2 feedback patch: Explore stays continuous. Never render a manual Show more control. */
+setTimeout(()=>{
+  if(window.NAVA_VERSION!=='1.6.2'||typeof appendExplorer162!=='function')return;
+  appendExplorer162=function(){
+    const grid=$('exploreGrid');
+    grid.querySelector('#exploreSentinel162')?.remove();
+    const batch=exploreList162.slice(exploreShown162,exploreShown162+16);
+    grid.insertAdjacentHTML('beforeend',batch.map(o=>'<button class="stayCard" data-object="'+esc(o.id)+'">'+imageFrame(o.image,'stayVisual','','',o.media||[])+'<div class="stayCopy"><small>'+esc(o.region||'Lebanon')+'</small><strong>'+esc(o.title)+'</strong><span>'+esc(o.area||'Lebanon')+'</span></div></button>').join(''));
+    exploreShown162+=batch.length;
+    bindCards(grid);bindImageFallbacks(grid);exploreObserver162?.disconnect();
+    if(exploreShown162>=exploreList162.length)return;
+    grid.insertAdjacentHTML('beforeend','<div id="exploreSentinel162" class="exploreSentinel162"><span class="loadDots162" role="status" aria-label="Loading discoveries">•••</span></div>');
+    if('IntersectionObserver' in window){
+      exploreObserver162=new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting)&&!$('exploreView').hidden)loadExplorer162()},{root:$('exploreView'),rootMargin:'0px 0px 420px 0px'});
+      exploreObserver162.observe($('exploreSentinel162'));
+    }else requestAnimationFrame(loadExplorer162);
+  };
+  if(!$('exploreView').hidden)renderExplore();
+},0);
