@@ -59,11 +59,16 @@ jobs:
                   im.verify()
           print(f'PASS: verified {len(files)} local listing photos')
           PY
+          - name: Upload optimized listing media to Bunny
+        env:
+          BUNNY_STORAGE_PASSWORD: ${{ secrets.BUNNY_STORAGE_PASSWORD }}
+          BUNNY_STORAGE_ZONE: lbnb-media
+        run: python scripts/upload-bunny-media.py
       - name: Commit imported media
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add lbnb-v0-live-07/site/media/listings lbnb-v0-live-07/site/v151-media.js scripts/photo-archive-import-report.json
+          git add lbnb-v0-live-07/site/v151-media.js scripts/photo-archive-import-report.json
           if git diff --cached --quiet; then
             echo "No changes to commit"
             exit 0
