@@ -1,0 +1,74 @@
+{
+  "archive": "/tmp/lbnb-photos.zip",
+  "archive_named_images": 1716,
+  "content_referenced_stems": 826,
+  "matching_archive_images": 826,
+  "imported": 815,
+  "invalid_count": 11,
+  "invalid": [
+    {
+      "stem": "01b673f030d782576d199140f720480aa39f1cc1",
+      "source": "photos/01b673f030d782576d199140f720480aa39f1cc1.webp",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077240>"
+    },
+    {
+      "stem": "044e36cae3b38cd2f8a9b612fd571dba266c0b79",
+      "source": "photos/044e36cae3b38cd2f8a9b612fd571dba266c0b79.jpeg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "19d5b43541f90c6a74f5bd16b78517a15eada047",
+      "source": "photos/19d5b43541f90c6a74f5bd16b78517a15eada047.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "231169b80a8a03f2451d1a537adbdd2e6baffca7",
+      "source": "photos/231169b80a8a03f2451d1a537adbdd2e6baffca7.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "2f998b7e167388ed1fd4d9ce06fb976fc6351539",
+      "source": "photos/2f998b7e167388ed1fd4d9ce06fb976fc6351539.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "46b5cb2ff1a163fbea957767c86e2fa28f0ddedb",
+      "source": "photos/46b5cb2ff1a163fbea957767c86e2fa28f0ddedb.jpeg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c040771a0>"
+    },
+    {
+      "stem": "99b960822e28513fa43c4cbe3769e74cfa5b0db9",
+      "source": "photos/99b960822e28513fa43c4cbe3769e74cfa5b0db9.jpeg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "ad934da56496ef8b9473edf9926606cdfe9511ef",
+      "source": "photos/ad934da56496ef8b9473edf9926606cdfe9511ef.jpeg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    },
+    {
+      "stem": "c7bf7d4583f51a716e526fc5d174bff1f3fb3542",
+      "source": "photos/c7bf7d4583f51a716e526fc5d174bff1f3fb3542.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c040771a0>"
+    },
+    {
+      "stem": "f76f0fbacf3830070a30127437c6a5346c6796b1",
+      "source": "photos/f76f0fbacf3830070a30127437c6a5346c6796b1.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c040771a0>"
+    },
+    {
+      "stem": "fecfc05aaf250a24c34d29d9e5506760b89df0c8",
+      "source": "photos/fecfc05aaf250a24c34d29d9e5506760b89df0c8.jpg",
+      "error": "cannot identify image file <_io.BytesIO object at 0x7f9c04077420>"
+    }
+  ],
+  "not_selected": 890,
+  "recovered_media_count_after": 815,
+  "settings": {
+    "max_dim": 1600,
+    "quality": 82,
+    "all": false,
+    "dry_run": false,
+    "strict": false
+  }
+}
